@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.081" height="24.081" viewBox="0 0 24.081 24.081">
+  <g id="brain" opacity="0.25">
+    <path fill="#A858E1" id="Path_921" data-name="Path 921" d="M3.81,4.468q0,.165.012.329a4.467,4.467,0,0,0-2.817,7.244,4.467,4.467,0,0,0,2.817,7.244q-.012.164-.012.329a4.466,4.466,0,0,0,7.525,3.256V1.213A4.466,4.466,0,0,0,3.81,4.468Z" transform="translate(0 0)"/>
+    <circle id="Ellipse_78" data-name="Ellipse 78" cx="0.5" cy="0.5" r="0.5" transform="translate(15.541 6.541)"/>
+    <path fill="#A858E1" id="Path_922" data-name="Path 922" d="M282.335,9.219A4.475,4.475,0,0,0,278.513,4.8q.012-.164.012-.329A4.466,4.466,0,0,0,271,1.213V6.632h1.532a2.117,2.117,0,1,1,0,1.411H271v3.292h3.414a2.117,2.117,0,1,1,0,1.411H271v3.292h1.532a2.117,2.117,0,1,1,0,1.411H271v5.419a4.466,4.466,0,0,0,7.525-3.256q0-.165-.012-.329a4.467,4.467,0,0,0,2.817-7.244A4.469,4.469,0,0,0,282.335,9.219Z" transform="translate(-258.254)"/>
+    <ellipse id="Ellipse_79" data-name="Ellipse 79" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(15.541 15.541)"/>
+    <circle id="Ellipse_80" data-name="Ellipse 80" cx="0.5" cy="0.5" r="0.5" transform="translate(17.541 11.541)"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.978" height="22.925" viewBox="0 0 37.978 22.925">
+  <g id="Group_471" data-name="Group 471" transform="translate(-319.021 -115.038)">
+    <g id="switch" transform="translate(319.021 16.538)">
+      <path id="Path_479" data-name="Path 479" d="M26.516,98.5H11.462a11.462,11.462,0,0,0,0,22.925H26.516a11.462,11.462,0,1,0,0-22.925Z" fill="#acd5df"/>
+      <path id="Path_480" data-name="Path 480" d="M39.17,128.5a9.17,9.17,0,1,0,0,18.34h7.1V128.5Z" transform="translate(-27.708 -27.708)" fill="#725fee"/>
+      <path id="Path_481" data-name="Path 481" d="M208.462,128.5h-7.95a13.727,13.727,0,0,0,0,18.34h7.95Z" transform="translate(-181.946 -27.708)" fill="#6241ea"/>
+      <path id="Path_482" data-name="Path 482" d="M347,128.5v18.34a9.17,9.17,0,0,0,0-18.34Z" transform="translate(-320.484 -27.708)" fill="#c4f3ff"/>
+      <path id="Path_483" data-name="Path 483" d="M243.047,137.67c0-5.064-3.079-9.17-6.877-9.17a9.17,9.17,0,0,0,0,18.34C239.968,146.84,243.047,142.734,243.047,137.67Z" transform="translate(-209.654 -27.708)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

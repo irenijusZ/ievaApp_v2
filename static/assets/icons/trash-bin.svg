@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="16.5" viewBox="0 0 16.5 16.5">
+  <g id="trash-bin" transform="translate(-2 -2)">
+    <path fill="#A858E1" id="Path_952" data-name="Path 952" d="M17.675,5H2.825a.825.825,0,0,0,0,1.65h1.65v9.9A2.474,2.474,0,0,0,6.95,19.025h6.6a2.474,2.474,0,0,0,2.475-2.475V6.65h1.65a.825.825,0,1,0,0-1.65Zm-3.3,11.55a.826.826,0,0,1-.825.825H6.95a.826.826,0,0,1-.825-.825V6.65h8.25Z" transform="translate(0 -0.525)" fill="red"/>
+    <path fill="#A858E1" id="Path_953" data-name="Path 953" d="M9.825,3.65h3.3a.825.825,0,0,0,0-1.65h-3.3a.825.825,0,0,0,0,1.65Z" transform="translate(-1.225)" fill="red"/>
+    <path fill="#A858E1" id="Path_954" data-name="Path 954" d="M10.65,14.95V10.825a.825.825,0,1,0-1.65,0V14.95a.825.825,0,1,0,1.65,0Z" transform="translate(-1.225 -1.4)" fill="red"/>
+    <path fill="#A858E1" id="Path_955" data-name="Path 955" d="M14.65,14.95V10.825a.825.825,0,1,0-1.65,0V14.95a.825.825,0,1,0,1.65,0Z" transform="translate(-1.925 -1.4)" fill="red"/>
+  </g>
+</svg>
