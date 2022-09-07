@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Record</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- fontawesome css -->
+  <script src="https://kit.fontawesome.com/92527efa3b.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- custom css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style_V2.0.css" />
+</head>
+
+<body>
+
+  <header>
+
+
+    </div>
+  </header>
+
+  <!-- page header starting -->
+  <nav class="navbar navbar-sticky-top Gradient">
+    <a href="./add_tag.html" style="position: absolute; left: 5%; color: white; cursor: pointer">
+      <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    </a>
+    <h4>Record Activies</h4>
+  </nav>
+  <!-- page header ending -->
+
+  <!-- main body starting -->
+  <main class="main_body">
+    <div class="container">
+      <!-- days selection -->
+      <div class="select_days">
+        <select class="form-select">
+          <option>Last 15 Days</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+
+      <!-- chart section -->
+      <section class="chart_wrapper">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs border-0" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#menu1">Tab 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Tab 2</a>
+          </li>
+         
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="menu1" class="container tab-pane active"><br>
+            <div class="chartBox">
+              <canvas id="myCharts" width="586px" height="586px" />
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-6 pe-2">
+                <select class="form-select">
+                  <option>Energy</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="col-6 ps-2">
+                <select class="form-select">
+                  <option>Frequency</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="menu2" class="container tab-pane fade"><br>
+            <div class="chartBox">
+              <canvas id="myCharts2" width="586px" height="586px" />
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-6 pe-2">
+                <select class="form-select">
+                  <option>Energy</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="col-6 ps-2">
+                <select class="form-select">
+                  <option>Frequency</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <!-- content section start -->
+      <section class="content_section">
+        <div class="accordion" id="accordionExample">
+          <!-- ist item starting -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="accordHead_content">
+                    <!-- date info -->
+                    <div class="date_wrapper">
+                      <h4 class="month_date">14</h4>
+                      <h5 class="month_detail">Jan, 2021</h5>
+                    </div>
+                    <!-- bar div -->
+                    <div class="v_bar"></div>
+                    <!-- time info -->
+                    <div class="time_info">
+                      <i class="fa-solid fa-clock"></i>
+                      <p>10:30 AM</p>
+                    </div>
+                </div>
+              </button>
+              <!-- setting dropdown starts here -->
+              <div class="dropdown settings_dropdown">
+                <div data-bs-toggle="dropdown" class="dots_wrapp">
+                  <i class="fa-solid fa-ellipsis-vertical" ></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/001-trash.png" alt="img" class="img-fluid"> Deletes</a> </li>
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img" class="img-fluid">  Edit</a> </li>
+                </ul>
+              </div>
+              <!-- settings dropdown ends here -->
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <!-- tags container starting here-->
+                <section class="tags_container">
+                  <div class="tagBox">
+                    Feeling one
+                  </div>
+                  <div class="tagBox">
+                    Second Feeling here
+                  </div>
+                  <div class="tagBox">
+                    Angry
+                  </div>
+                  <div class="tagBox">
+                    Amused
+                  </div>
+                  <div class="tagBox">
+                    Lovely
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container">
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum simply dummy
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+
+                  <!-- specs info starting here-->
+                  <section class="specs_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Emotional <br> Frequency</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Discipline</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Have fun</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:30%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Energy</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:20%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Inspiration</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Crativity</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- specs info ending here-->
+
+                  <!-- statistics section starting here -->
+                  <section class="statistics_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statistics_left">
+                          <div class="statisticBox">
+                            <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                            <div class="statisticBox__content">
+                              <h6>30Min</h6>
+                              <p>Meditation Time</p>
+                            </div>
+                          </div>
+                       
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/moment_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>08</h6>
+                            <p>Awareness Moments</p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/steps_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>1,057</h6>
+                            <p>Walked Steps</p>
+                          </div>
+                        </div>
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>30Min</h6>
+                            <p>Meditation Time</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- statistics section ending here -->
+
+                   <!-- tags container starting here-->
+                <section class="tags_container tags_container__t2">
+                  <div class="tagBox">
+                    <img src="assets/images/clock_icon.svg" alt="tag icon">
+                    Wake Up Early
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/sports_icon.svg" alt="tag icon">
+                    Sports
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/study_icon.svg" alt="tag icon">
+                    Study
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/gratitude_icon.svg" alt="tag icon">
+                    Gratitude
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/focused_icon.svg" alt="tag icon">
+                    Focussed
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container tags_container__t2">
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/sick_icon.svg" alt="tag icon">
+                      Being Sick
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/seminar_icon.svg" alt="tag icon">
+                      Seminar
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+
+                   <!-- item details starting here -->
+                   <section class="itemDetail_wrapper">
+                      <p>“Lorem Ipsum is simply dummy text of printing and typesetting industry“</p>
+                      <p>“Lorem Ipsum is simply dummy text of the printing and Lorem is Ipsum typesetting industry. Lorem Ipsum has“</p>
+                   </section>
+                   <!-- item details endig here -->
+
+
+              </div>
+            </div>
+          </div>
+          <!-- ist item ending -->
+            <!-- 2nd item starting -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="accordHead_content">
+                  <!-- date info -->
+                  <div class="date_wrapper">
+                    <h4 class="month_date">15</h4>
+                    <h5 class="month_detail">Jan, 2021</h5>
+                  </div>
+                  <!-- bar div -->
+                  <div class="v_bar"></div>
+                  <!-- time info -->
+                  <div class="time_info">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>10:30 AM</p>
+                  </div>
+              </div>
+              </button>
+              <!-- setting dropdown starts here -->
+              <div class="dropdown settings_dropdown">
+                <div data-bs-toggle="dropdown" class="dots_wrapp">
+                  <i class="fa-solid fa-ellipsis-vertical" ></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/001-trash.png" alt="img" class="img-fluid"> Deletes</a> </li>
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img" class="img-fluid">  Edit</a> </li>
+                </ul>
+              </div>
+              <!-- settings dropdown ends here -->
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <!-- tags container starting here-->
+                <section class="tags_container">
+                  <div class="tagBox">
+                    Feeling one
+                  </div>
+                  <div class="tagBox">
+                    Second Feeling here
+                  </div>
+                  <div class="tagBox">
+                    Angry
+                  </div>
+                  <div class="tagBox">
+                    Amused
+                  </div>
+                  <div class="tagBox">
+                    Lovely
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container">
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum simply dummy
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+
+                  <!-- specs info starting here-->
+                  <section class="specs_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Emotional <br> Frequency</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Discipline</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Have fun</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:30%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Energy</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:20%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Inspiration</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Crativity</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- specs info ending here-->
+
+                  <!-- statistics section starting here -->
+                  <section class="statistics_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statistics_left">
+                          <div class="statisticBox">
+                            <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                            <div class="statisticBox__content">
+                              <h6>30Min</h6>
+                              <p>Meditation Time</p>
+                            </div>
+                          </div>
+                       
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/moment_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>08</h6>
+                            <p>Awareness Moments</p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/steps_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>1,057</h6>
+                            <p>Walked Steps</p>
+                          </div>
+                        </div>
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>30Min</h6>
+                            <p>Meditation Time</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- statistics section ending here -->
+
+                   <!-- tags container starting here-->
+                <section class="tags_container tags_container__t2">
+                  <div class="tagBox">
+                    <img src="assets/images/clock_icon.svg" alt="tag icon">
+                    Wake Up Early
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/sports_icon.svg" alt="tag icon">
+                    Sports
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/study_icon.svg" alt="tag icon">
+                    Study
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/gratitude_icon.svg" alt="tag icon">
+                    Gratitude
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/focused_icon.svg" alt="tag icon">
+                    Focussed
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container tags_container__t2">
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/sick_icon.svg" alt="tag icon">
+                      Being Sick
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/seminar_icon.svg" alt="tag icon">
+                      Seminar
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+
+                   <!-- item details starting here -->
+                   <section class="itemDetail_wrapper">
+                      <p>“Lorem Ipsum is simply dummy text of printing and typesetting industry“</p>
+                      <p>“Lorem Ipsum is simply dummy text of the printing and Lorem is Ipsum typesetting industry. Lorem Ipsum has“</p>
+                   </section>
+                   <!-- item details endig here -->
+
+
+              </div>
+            </div>
+          </div>
+          <!-- 2nd item ending -->
+            <!-- third item starting -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="accordHead_content">
+                  <!-- date info -->
+                  <div class="date_wrapper">
+                    <h4 class="month_date">16</h4>
+                    <h5 class="month_detail">Jan, 2021</h5>
+                  </div>
+                  <!-- bar div -->
+                  <div class="v_bar"></div>
+                  <!-- time info -->
+                  <div class="time_info">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>10:30 AM</p>
+                  </div>
+              </div>
+              </button>
+              <!-- setting dropdown starts here -->
+              <div class="dropdown settings_dropdown">
+                <div data-bs-toggle="dropdown" class="dots_wrapp">
+                  <i class="fa-solid fa-ellipsis-vertical" ></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/001-trash.png" alt="img" class="img-fluid"> Deletes</a> </li>
+                  <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img" class="img-fluid">  Edit</a> </li>
+                </ul>
+              </div>
+              <!-- settings dropdown ends here -->
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <!-- tags container starting here-->
+                <section class="tags_container">
+                  <div class="tagBox">
+                    Feeling one
+                  </div>
+                  <div class="tagBox">
+                    Second Feeling here
+                  </div>
+                  <div class="tagBox">
+                    Angry
+                  </div>
+                  <div class="tagBox">
+                    Amused
+                  </div>
+                  <div class="tagBox">
+                    Lovely
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container">
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      Lorem Ipsum simply dummy
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+
+                  <!-- specs info starting here-->
+                  <section class="specs_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Emotional <br> Frequency</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Discipline</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Have fun</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:30%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="specs_list specs_list__1">
+                          <!-- item 1 -->
+                          <div class="specs_item">
+                            <h6 class="specName specName_special">Energy</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:20%"></div>
+                            </div>
+                          </div>
+                          <!-- item 2 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Inspiration</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:50%"></div>
+                            </div>
+                          </div>
+                          <!-- item 3 -->
+                          <div class="specs_item">
+                            <h6 class="specName">Crativity</h6>
+                            <div class="progress">
+                              <div class="progress-bar" style="width:90%"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- specs info ending here-->
+
+                  <!-- statistics section starting here -->
+                  <section class="statistics_wrapper">
+                    <div class="row">
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statistics_left">
+                          <div class="statisticBox">
+                            <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                            <div class="statisticBox__content">
+                              <h6>30Min</h6>
+                              <p>Meditation Time</p>
+                            </div>
+                          </div>
+                       
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/moment_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>08</h6>
+                            <p>Awareness Moments</p>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-6">
+                        <!-- 1st state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/steps_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>1,057</h6>
+                            <p>Walked Steps</p>
+                          </div>
+                        </div>
+                        <!-- 2nd state -->
+                        <div class="statisticBox">
+                          <img src="assets/images/meditation_icon.svg" alt="statistics icon">
+                          <div class="statisticBox__content">
+                            <h6>30Min</h6>
+                            <p>Meditation Time</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- statistics section ending here -->
+
+                   <!-- tags container starting here-->
+                <section class="tags_container tags_container__t2">
+                  <div class="tagBox">
+                    <img src="assets/images/clock_icon.svg" alt="tag icon">
+                    Wake Up Early
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/sports_icon.svg" alt="tag icon">
+                    Sports
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/study_icon.svg" alt="tag icon">
+                    Study
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/gratitude_icon.svg" alt="tag icon">
+                    Gratitude
+                  </div>
+                  <div class="tagBox">
+                    <img src="assets/images/focused_icon.svg" alt="tag icon">
+                    Focussed
+                  </div>
+                </section>
+                <!-- tags container ending here-->
+                  <!-- tags container 2 starting here-->
+                  <section class="tags_container tags_container__t2">
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/sick_icon.svg" alt="tag icon">
+                      Being Sick
+                    </div>
+                    <div class="tagBox tagBox_sky">
+                      <img src="assets/images/seminar_icon.svg" alt="tag icon">
+                      Seminar
+                    </div>
+                  </section>
+                   <!-- tags container 2 ending here -->
+                   <!-- item details starting here -->
+                   <section class="itemDetail_wrapper">
+                      <p>“Lorem Ipsum is simply dummy text of printing and typesetting industry“</p>
+                      <p>“Lorem Ipsum is simply dummy text of the printing and Lorem is Ipsum typesetting industry. Lorem Ipsum has“</p>
+                   </section>
+                   <!-- item details endig here -->
+              </div>
+            </div>
+          </div>
+          <!-- 3rd item ending -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <!-- main body ending -->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom bg-light">
+    <div class="container RowFlex" id="navBtns">
+      <!--Emotions    -->
+      <a href="./emotions.html" class="navIcon " id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.399" height="24.081" viewBox="0 0 27.399 24.081">
+          <g opacity="0.5" id="feeling" transform="translate(0 -31)">
+            <path id="Path_923" data-name="Path 923" d="M8.081,197.054a8,8,0,0,0,7.926-7.021,9.637,9.637,0,0,1-6.312-8.871,8.033,8.033,0,1,0-1.614,15.892Zm2.408-11.238a.8.8,0,1,1-.8.8A.8.8,0,0,1,10.489,185.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,5.673,185.816Zm-1.442,5.136a4.812,4.812,0,0,1,7.7,0,.8.8,0,1,1-1.282.966,3.3,3.3,0,0,0-5.135,0,.8.8,0,1,1-1.282-.966Z" transform="translate(0 -141.973)"></path>
+            <path id="Path_924" data-name="Path 924" d="M219.027,31a8.027,8.027,0,1,0,8.081,8.027A8.037,8.037,0,0,0,219.027,31Zm2.408,4.816a.8.8,0,1,1-.8.8A.8.8,0,0,1,221.435,35.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,216.619,35.816Zm6.258,4.5a4.812,4.812,0,0,1-7.7,0,.8.8,0,0,1,1.283-.966,3.3,3.3,0,0,0,5.135,0,.8.8,0,1,1,1.282.966Z" transform="translate(-199.708 0)"></path>
+          </g>
+        </svg>
+      </a>
+      <!--Calendar - logs    -->
+      <a href="./calendar.html" class="navIcon active" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.068" height="24.081" viewBox="0 0 20.068 24.081">
+          <path opacity="0.5" id="book" d="M3.048,2.007h17.02V0H3.01A3.016,3.016,0,0,0,0,3V21.071a3.019,3.019,0,0,0,3.01,3.01H19.064a1.006,1.006,0,0,0,1-1V4.014H15.051v4.8a.5.5,0,0,1-.853.351L13.044,8.027,11.89,9.181a.5.5,0,0,1-.853-.351V4.014H3.01a1.006,1.006,0,0,1-1-1V2.948A1.028,1.028,0,0,1,3.048,2.007ZM6.02,14.048h8.027v2.007H6.02Zm0,4.014h8.027v2.007H6.02Zm0,0"></path>
+        </svg>
+      </a>
+      <!--Analysis-->
+      <a href="./analysis.html" class="navIcon" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.081" height="24.081" viewBox="0 0 24.081 24.081">
+          <g opacity="0.5" id="brain">
+            <path id="Path_921" data-name="Path 921" d="M3.81,4.468q0,.165.012.329a4.467,4.467,0,0,0-2.817,7.244,4.467,4.467,0,0,0,2.817,7.244q-.012.164-.012.329a4.466,4.466,0,0,0,7.525,3.256V1.213A4.466,4.466,0,0,0,3.81,4.468Z" transform="translate(0 0)"></path>
+            <circle id="Ellipse_78" data-name="Ellipse 78" cx="0.5" cy="0.5" r="0.5" transform="translate(15.541 6.541)"></circle>
+            <path id="Path_922" data-name="Path 922" d="M282.335,9.219A4.475,4.475,0,0,0,278.513,4.8q.012-.164.012-.329A4.466,4.466,0,0,0,271,1.213V6.632h1.532a2.117,2.117,0,1,1,0,1.411H271v3.292h3.414a2.117,2.117,0,1,1,0,1.411H271v3.292h1.532a2.117,2.117,0,1,1,0,1.411H271v5.419a4.466,4.466,0,0,0,7.525-3.256q0-.165-.012-.329a4.467,4.467,0,0,0,2.817-7.244A4.469,4.469,0,0,0,282.335,9.219Z" transform="translate(-258.254)"></path>
+            <ellipse id="Ellipse_79" data-name="Ellipse 79" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(15.541 15.541)"></ellipse>
+            <circle id="Ellipse_80" data-name="Ellipse 80" cx="0.5" cy="0.5" r="0.5" transform="translate(17.541 11.541)"></circle>
+          </g>
+        </svg>
+      </a>
+      <!--More-->
+      <a href="./more.html" class="navIcon" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18.314" height="4.226" viewBox="0 0 18.314 4.226">
+          <g opacity="0.7" id="dots" transform="translate(-3 17.226) rotate(-90)">
+            <path id="XMLID_294_" d="M13,15.113A2.113,2.113,0,1,0,15.113,13,2.116,2.116,0,0,0,13,15.113Z" transform="translate(0 -2.956)"></path>
+            <path id="XMLID_295_" d="M13,25.113A2.113,2.113,0,1,0,15.113,23,2.116,2.116,0,0,0,13,25.113Z" transform="translate(0 -5.913)"></path>
+            <path id="XMLID_297_" d="M13,5.113A2.113,2.113,0,1,0,15.113,3,2.116,2.116,0,0,0,13,5.113Z"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+
+</body>
+
+
+
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"></script>
+<script src="./assets/js/chart_dummy.js"></script>
+
+
+
+</html>
