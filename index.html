@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="description" content="Web Design" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="author" content="Manik MT" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <!-- Font awsome style -->
+  <script src="https://kit.fontawesome.com/92527efa3b.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" />
+  <link href="https://kenwheeler.github.io/slick/slick/slick-theme.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <!-- Custom css -->
+  <link rel="stylesheet" href="./assets/css/style.v2.0.css" />
+  <title>Records</title>
+</head>
+
+<body>
+  <!-- page header starting -->
+  <nav class="navbar navbar-sticky-top Gradient">
+    <a href="./add_tag.html" style="position: absolute; left: 5%; color: white; cursor: pointer">
+      <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    </a>
+    <h4>Record</h4>
+  </nav>
+  <!-- page header ending -->
+  <div class="backdrop "></div>
+  <div class="pop-up-delete">
+    <img class="del-icon-pop" src="../assets/images/delpopup.png" alt="">
+    <img class="pop-icon" src="../assets/images/popIcon.png" alt="">
+    <h3 class="text-center text-bold">Are you sure?</h3>
+    <p class="pop-descp">Lorem ipsum dolor sit amet consectetur</p>
+    <button class="pop-up-done-btn">Done</button>
+    <button class="pop-up-back-btn">Back</button>
+  </div>
+
+  <!-- banner start -->
+  <section class="banner">
+    <div class="container">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Last 15 Days</option>
+        <option value="1">Last 1 Month</option>
+        <option value="2">Last 3 Month</option>
+        <option value="3">Last 6 Month</option>
+      </select>
+      <div class="slider-body">
+        <div class="slider-item">
+          <div class="wrapper">
+            <canvas id="myCharts" width="586px" height="586px" />
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="wrapper">
+            <canvas id="myCharts2" width="586px" height="586px" />
+          </div>
+          <div class="coustomSelect">
+            <div class="row g-0 mt-2">
+              <div class="col-6 pe-1">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Last 15 Days</option>
+                  <option value="1">Last 1 Month</option>
+                  <option value="2">Last 3 Month</option>
+                  <option value="3">Last 6 Month</option>
+                </select>
+              </div>
+              <div class="col-6 ps-1"> <select class="form-select" aria-label="Default select example">
+                  <option selected>Last 15 Days</option>
+                  <option value="1">Last 1 Month</option>
+                  <option value="2">Last 3 Month</option>
+                  <option value="3">Last 6 Month</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner end-->
+
+  <!-- main body start -->
+  <main class="common-body">
+    <div class="container">
+      <div class="accordion general_accordion" id="accordionRecord">
+        <!-- 1st record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingOne">
+            <!-- date & time info -->
+            <button class="accordion-button " type="button" data-bs-toggle="collapse"  data-bs-target="#recordOne" aria-expanded="false" aria-controls="recordOne">
+              <div class="dateTime_wrapp">
+                <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+                <div class="date_wrapp"><span class="bold-text">14</span><d class="date">Jan, 2021</div>
+                <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+              </div>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <span class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                  <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                    <li> <a class="dropdown-item dropdown-delete-item" href="#"><img src="assets/images/001-trash.png"
+                          alt="img" class="img-fluid" /> Delete </a>
+                    </li>
+                    <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img"
+                          class="img-fluid" /> Edit </a>
+                    </li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+          </h2>
+
+        <!-- accordion body -->
+
+          <div id="recordOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <div class="tags_wrapper">
+                <ul class="first-list">
+                  <li><a href="">Feeling one</a></li>
+                  <li><a href="">Second Feeling here</a></li>
+                  <li><a href="">Angry</a></li>
+                  <li><a href="">Amused</a></li>
+                  <li><a href="">Lovely</a></li>
+                </ul>
+                <ul class="secend-list">
+                  <li><a href="">Lorem Ipsum</a></li>
+                  <li><a href="">Lorem Ipsum 2</a></li>
+                  <li><a href="">Lorem Ipsum 3</a></li>
+                  <li><a href="">Lorem Ipsum simply dummy</a></li>
+                </ul>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper">
+                <div class="row " style="padding-bottom: 9px;">
+                  <!-- Loop item start here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Emotional Frequency</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Loop item end here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Energy</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 0</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per0"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 10</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 60</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 20</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per20"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 70</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per70"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 30</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per30"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 80</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per80"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6  my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 40</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per40"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 90</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per90"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50-1</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1 ">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 100</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- progress section  end-->
+
+                <!-- media box start -->
+                <div class="media_wrapper">
+                  <div class="row media-item">
+
+                    <!-- Loop item start here -->
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30M</h4>
+                        <p>Meditation Time</p>
+                      </div>
+                    </div>
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 1 </p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 2</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time 3</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>60</h4>
+                        <p>Meditation Time 4</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>12</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments 1</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector02.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>057</h4>
+                        <p>Walked Steps</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- media box end-->
+                <div class="activityTags_wrapper">
+                  <div class="list-tags_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Group2.svg" alt="img" /> Wake Up Early</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18285.svg" alt="img" class="img-fluid" />Sports</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group03.svg" alt="img" class="img-fluid" />Study</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18286.svg" alt="img" class="img-fluid" />Gratitude</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Frame03.svg" alt="img" class="img-fluid" />Focussed</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-progress_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Vector05.svg" alt="img" class="img-fluid" />
+                          Being Sick</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/XMLID_129.svg" alt="img" class="img-fluid" />Seminar</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- record description end -->
+                <div class="record_description">
+                  <p>
+                    “Lorem Ipsum is simply dummy text of printing and
+                    typesetting industry“
+
+                    “Lorem Ipsum is simply dummy text of the printing and Lorem
+                    is Ipsum typesetting industry. Lorem Ipsum has“
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 1st record end -->
+
+
+        <!-- 2nd record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingTwo">
+            <!-- date & time info -->
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  data-bs-target="#recordTwo" aria-expanded="false" aria-controls="recordTwo">
+              <div class="dateTime_wrapp">
+                <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+                <div class="date_wrapp"><span class="bold-text">14</span><d class="date">Jan, 2021</div>
+                <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+              </div>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <span class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                  <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                    <li> <a class="dropdown-item dropdown-delete-item" href="#"><img src="assets/images/001-trash.png"
+                          alt="img" class="img-fluid" /> Delete </a>
+                    </li>
+                    <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img"
+                          class="img-fluid" /> Edit </a>
+                    </li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+          </h2>
+
+        <!-- accordion body -->
+
+          <div id="recordTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <div class="tags_wrapper">
+                <ul class="first-list">
+                  <li><a href="">Feeling one</a></li>
+                  <li><a href="">Second Feeling here</a></li>
+                  <li><a href="">Angry</a></li>
+                  <li><a href="">Amused</a></li>
+                  <li><a href="">Lovely</a></li>
+                </ul>
+                <ul class="secend-list">
+                  <li><a href="">Lorem Ipsum</a></li>
+                  <li><a href="">Lorem Ipsum 2</a></li>
+                  <li><a href="">Lorem Ipsum 3</a></li>
+                  <li><a href="">Lorem Ipsum simply dummy</a></li>
+                </ul>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper">
+                <div class="row " style="padding-bottom: 9px;">
+                  <!-- Loop item start here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Emotional Frequency</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Loop item end here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Energy</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 0</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per0"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 10</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 60</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 20</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per20"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 70</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per70"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 30</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per30"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 80</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per80"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6  my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 40</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per40"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 90</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per90"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50-1</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1 ">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 100</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- progress section  end-->
+
+                <!-- media box start -->
+                <div class="media_wrapper">
+                  <div class="row media-item">
+
+                    <!-- Loop item start here -->
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30M</h4>
+                        <p>Meditation Time</p>
+                      </div>
+                    </div>
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 1 </p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 2</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time 3</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>60</h4>
+                        <p>Meditation Time 4</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>12</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments 1</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector02.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>057</h4>
+                        <p>Walked Steps</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- media box end-->
+                <div class="activityTags_wrapper">
+                  <div class="list-tags_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Group2.svg" alt="img" /> Wake Up Early</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18285.svg" alt="img" class="img-fluid" />Sports</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group03.svg" alt="img" class="img-fluid" />Study</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18286.svg" alt="img" class="img-fluid" />Gratitude</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Frame03.svg" alt="img" class="img-fluid" />Focussed</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-progress_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Vector05.svg" alt="img" class="img-fluid" />
+                          Being Sick</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/XMLID_129.svg" alt="img" class="img-fluid" />Seminar</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- record description end -->
+                <div class="record_description">
+                  <p>
+                    “Lorem Ipsum is simply dummy text of printing and
+                    typesetting industry“
+
+                    “Lorem Ipsum is simply dummy text of the printing and Lorem
+                    is Ipsum typesetting industry. Lorem Ipsum has“
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 2nd record end -->
+        <!-- 3rd record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingThree">
+            <!-- date & time info -->
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  data-bs-target="#recordThree" aria-expanded="false" aria-controls="recordThree">
+              <div class="dateTime_wrapp">
+                <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+                <div class="date_wrapp"><span class="bold-text">14</span><d class="date">Jan, 2021</div>
+                <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+              </div>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <span class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                  <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                    <li> <a class="dropdown-item dropdown-delete-item" href="#"><img src="assets/images/001-trash.png"
+                          alt="img" class="img-fluid" /> Delete </a>
+                    </li>
+                    <li><a class="dropdown-item" href="#"><img src="assets/images/002-edit.png" alt="img"
+                          class="img-fluid" /> Edit </a>
+                    </li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+          </h2>
+
+        <!-- accordion body -->
+
+          <div id="recordThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <div class="tags_wrapper">
+                <ul class="first-list">
+                  <li><a href="">Feeling one</a></li>
+                  <li><a href="">Second Feeling here</a></li>
+                  <li><a href="">Angry</a></li>
+                  <li><a href="">Amused</a></li>
+                  <li><a href="">Lovely</a></li>
+                </ul>
+                <ul class="secend-list">
+                  <li><a href="">Lorem Ipsum</a></li>
+                  <li><a href="">Lorem Ipsum 2</a></li>
+                  <li><a href="">Lorem Ipsum 3</a></li>
+                  <li><a href="">Lorem Ipsum simply dummy</a></li>
+                </ul>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper">
+                <div class="row " style="padding-bottom: 9px;">
+                  <!-- Loop item start here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Emotional Frequency</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Loop item end here -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <h4>Energy</h4>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 0</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per0"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 10</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 60</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 20</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per20"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 70</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per70"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 30</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per30"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 80</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per80"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6  my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 40</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per40"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- loop slider -->
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 90</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per90"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 50-1</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-same col-6 my-1 ">
+                    <div class="row g-0">
+                      <div class="col-6">
+                        <div class="text">
+                          <p>Have fun 100</p>
+                        </div>
+                      </div>
+                      <div class="col-6 align-self-center">
+                        <div class="bar">
+                          <div class="inner-bar w-per100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- progress section  end-->
+
+                <!-- media box start -->
+                <div class="media_wrapper">
+                  <div class="row media-item">
+
+                    <!-- Loop item start here -->
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30M</h4>
+                        <p>Meditation Time</p>
+                      </div>
+                    </div>
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 1 </p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30</h4>
+                        <p>Meditation Time 2</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time 3</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6 my-1"><img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>60</h4>
+                        <p>Meditation Time 4</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>12</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments 1</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>08</h4>
+                        <p>Awareness Moments</p>
+                      </div>
+                    </div>
+
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Vector02.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>057</h4>
+                        <p>Walked Steps</p>
+                      </div>
+                    </div>
+                    <div class="media col-6  my-1">
+                      <img src="assets/images/Group.svg" alt="img" class="img-fluid" />
+                      <div class="media-body">
+                        <h4>30Min</h4>
+                        <p>Meditation Time</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- media box end-->
+                <div class="activityTags_wrapper">
+                  <div class="list-tags_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Group2.svg" alt="img" /> Wake Up Early</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18285.svg" alt="img" class="img-fluid" />Sports</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group03.svg" alt="img" class="img-fluid" />Study</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Group18286.svg" alt="img" class="img-fluid" />Gratitude</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/Frame03.svg" alt="img" class="img-fluid" />Focussed</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-progress_wrapper">
+                    <ul>
+                      <li>
+                        <a href=""><img src="assets/images/Vector05.svg" alt="img" class="img-fluid" />
+                          Being Sick</a>
+                      </li>
+                      <li>
+                        <a href=""><img src="assets/images/XMLID_129.svg" alt="img" class="img-fluid" />Seminar</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- record description end -->
+                <div class="record_description">
+                  <p>
+                    “Lorem Ipsum is simply dummy text of printing and
+                    typesetting industry“
+
+                    “Lorem Ipsum is simply dummy text of the printing and Lorem
+                    is Ipsum typesetting industry. Lorem Ipsum has“
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 3rd record end -->
+
+        
+
+
+      </div>
+    </div>
+  </main>
+  <!-- main body end -->
+
+  <!-- main body ending -->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom bg-light">
+    <div class="container RowFlex" id="navBtns">
+      <!--Emotions    -->
+      <a href="./emotions.html" class="navIcon " id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.399" height="24.081" viewBox="0 0 27.399 24.081">
+          <g opacity="0.5" id="feeling" transform="translate(0 -31)">
+            <path id="Path_923" data-name="Path 923"
+              d="M8.081,197.054a8,8,0,0,0,7.926-7.021,9.637,9.637,0,0,1-6.312-8.871,8.033,8.033,0,1,0-1.614,15.892Zm2.408-11.238a.8.8,0,1,1-.8.8A.8.8,0,0,1,10.489,185.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,5.673,185.816Zm-1.442,5.136a4.812,4.812,0,0,1,7.7,0,.8.8,0,1,1-1.282.966,3.3,3.3,0,0,0-5.135,0,.8.8,0,1,1-1.282-.966Z"
+              transform="translate(0 -141.973)"></path>
+            <path id="Path_924" data-name="Path 924"
+              d="M219.027,31a8.027,8.027,0,1,0,8.081,8.027A8.037,8.037,0,0,0,219.027,31Zm2.408,4.816a.8.8,0,1,1-.8.8A.8.8,0,0,1,221.435,35.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,216.619,35.816Zm6.258,4.5a4.812,4.812,0,0,1-7.7,0,.8.8,0,0,1,1.283-.966,3.3,3.3,0,0,0,5.135,0,.8.8,0,1,1,1.282.966Z"
+              transform="translate(-199.708 0)"></path>
+          </g>
+        </svg>
+      </a>
+      <!--Calendar - logs    -->
+      <a href="./calendar.html" class="navIcon active" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.068" height="24.081" viewBox="0 0 20.068 24.081">
+          <path opacity="0.5" id="book"
+            d="M3.048,2.007h17.02V0H3.01A3.016,3.016,0,0,0,0,3V21.071a3.019,3.019,0,0,0,3.01,3.01H19.064a1.006,1.006,0,0,0,1-1V4.014H15.051v4.8a.5.5,0,0,1-.853.351L13.044,8.027,11.89,9.181a.5.5,0,0,1-.853-.351V4.014H3.01a1.006,1.006,0,0,1-1-1V2.948A1.028,1.028,0,0,1,3.048,2.007ZM6.02,14.048h8.027v2.007H6.02Zm0,4.014h8.027v2.007H6.02Zm0,0">
+          </path>
+        </svg>
+      </a>
+      <!--Analysis-->
+      <a href="./analysis.html" class="navIcon" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.081" height="24.081" viewBox="0 0 24.081 24.081">
+          <g opacity="0.5" id="brain">
+            <path id="Path_921" data-name="Path 921"
+              d="M3.81,4.468q0,.165.012.329a4.467,4.467,0,0,0-2.817,7.244,4.467,4.467,0,0,0,2.817,7.244q-.012.164-.012.329a4.466,4.466,0,0,0,7.525,3.256V1.213A4.466,4.466,0,0,0,3.81,4.468Z"
+              transform="translate(0 0)"></path>
+            <circle id="Ellipse_78" data-name="Ellipse 78" cx="0.5" cy="0.5" r="0.5"
+              transform="translate(15.541 6.541)"></circle>
+            <path id="Path_922" data-name="Path 922"
+              d="M282.335,9.219A4.475,4.475,0,0,0,278.513,4.8q.012-.164.012-.329A4.466,4.466,0,0,0,271,1.213V6.632h1.532a2.117,2.117,0,1,1,0,1.411H271v3.292h3.414a2.117,2.117,0,1,1,0,1.411H271v3.292h1.532a2.117,2.117,0,1,1,0,1.411H271v5.419a4.466,4.466,0,0,0,7.525-3.256q0-.165-.012-.329a4.467,4.467,0,0,0,2.817-7.244A4.469,4.469,0,0,0,282.335,9.219Z"
+              transform="translate(-258.254)"></path>
+            <ellipse id="Ellipse_79" data-name="Ellipse 79" cx="0.5" cy="1" rx="0.5" ry="1"
+              transform="translate(15.541 15.541)"></ellipse>
+            <circle id="Ellipse_80" data-name="Ellipse 80" cx="0.5" cy="0.5" r="0.5"
+              transform="translate(17.541 11.541)"></circle>
+          </g>
+        </svg>
+      </a>
+      <!--More-->
+      <a href="./more.html" class="navIcon" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18.314" height="4.226" viewBox="0 0 18.314 4.226">
+          <g opacity="0.7" id="dots" transform="translate(-3 17.226) rotate(-90)">
+            <path id="XMLID_294_" d="M13,15.113A2.113,2.113,0,1,0,15.113,13,2.116,2.116,0,0,0,13,15.113Z"
+              transform="translate(0 -2.956)"></path>
+            <path id="XMLID_295_" d="M13,25.113A2.113,2.113,0,1,0,15.113,23,2.116,2.116,0,0,0,13,25.113Z"
+              transform="translate(0 -5.913)"></path>
+            <path id="XMLID_297_" d="M13,5.113A2.113,2.113,0,1,0,15.113,3,2.116,2.116,0,0,0,13,5.113Z"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- fixed end-->
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"></script>
+  <script src="./assets/js/chart_dummy.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>
