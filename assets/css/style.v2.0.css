@@ -75,7 +75,13 @@ ul {
 }
 
 .navbar-sticky-top h4 {
+  font-family: 'Nunito', sans-serif !important;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
   text-align: center;
+  margin-bottom: 0px;
 }
 
 /* main css starts from here */
@@ -161,7 +167,7 @@ ul {
 
 /* delete popup css ends here */
 .banner {
-  padding: 12px 0 12px 0;
+  padding: 70px 0 12px 0;
 }
 
 .banner select {
@@ -349,24 +355,24 @@ canvas {
   display: none;
 }
 
-.general_accordion .accordion-header .record-cta {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translate(0px, -50%);
-  width: 35px;
-  height: 35px;
-  z-index: 9;
-  text-align: center;
-}
-
 .common-body .dropdown-menu {
   text-align: center;
   min-width: 120px;
-  padding: 5px 0;
+  padding: 0px;
   border: 0;
-  background: #000000b3;
-  color: #fff;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+}
+
+.common-body .dropdown-menu li {
+  padding: 0px 15px;
+}
+
+.common-body .dropdown-menu li:hover {
+  background-color: #efefef;
+  transition: all ease .6s;
 }
 
 .dropdown-menu.show {
@@ -379,7 +385,8 @@ canvas {
 }
 
 .element-menu a {
-  color: #fff !important;
+  color: #000000 !important;
+  font-weight: 500;
 }
 
 .general_accordion .accordion-body {
@@ -403,11 +410,27 @@ canvas {
   font-size: 14px;
   color: #fff;
   text-align: left;
-  padding: 6px 12px;
+  padding: 12px 0px;
+  border-bottom: 0.5px solid #0000001a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.active .accordion-header .accordion-button {
+.common-body .dropdown-item:hover {
+  background-color: unset;
+}
+
+.common-body .dropdown-menu li:last-of-type .dropdown-item {
+  border-bottom: 0px;
+}
+
+.accordion-header .accordion-button {
   box-shadow: #63636333 0px 4px 8px 0px;
+}
+
+.accordion-header .accordion-button.collapsed {
+  box-shadow: unset;
 }
 
 .media:nth-child(odd), .item-same:nth-child(odd) {
@@ -730,17 +753,27 @@ canvas {
 }
 
 /* setting delete cta  */
+.record-cta .dropdown {
+  position: unset !important;
+}
+
 .dots_wrapp {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translate(0px, -50%);
   width: 35px;
   height: 35px;
   border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 .dots_wrapp:hover {
   background-color: #efefef;
+  transition: all ease .6s;
 }
 
 .dots_wrapp i {
