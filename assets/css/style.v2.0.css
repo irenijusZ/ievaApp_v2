@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins' 'Nunito', sans-serif;
+  font-family: "Poppins" "Nunito", sans-serif;
   font-weight: 400;
   position: relative;
   color: #194454;
@@ -14,7 +14,12 @@ body {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
 }
 
@@ -331,6 +336,41 @@ canvas {
 
 .general_accordion .accordion-header button.accordion-button:not(.collapsed)::after {
   top: 0;
+  display: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(96%) contrast(104%);
+}
+
+.accordion-button::after {
+  display: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  display: none !important;
+}
+
+button.collapse_btn {
+  padding: 0px !important;
+  background-color: unset;
+  margin-left: auto;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px !important;
+  box-shadow: unset !important;
+}
+
+button.collapse_btn:hover {
+  background-color: #efefef;
+  transition: all ease .6s;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-btn-color);
 }
 
 .common-body .accordion-item.active {
@@ -343,9 +383,25 @@ canvas {
 } */
 .general_accordion .accordion-header {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 10px 10px 15px;
 }
 
-.dropdown, .dropdown-center, .dropend, .dropstart, .dropup, .dropup-center {
+.active_header {
+  box-shadow: #63636333 0px 4px 8px 0px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.dropdown,
+.dropdown-center,
+.dropend,
+.dropstart,
+.dropup,
+.dropup-center {
   position: relative;
   z-index: 99;
   cursor: pointer;
@@ -392,6 +448,7 @@ canvas {
 .general_accordion .accordion-body {
   padding: 15px;
   padding-bottom: 0 !important;
+  border-top: 2px solid #80808029;
 }
 
 .general_accordion .accordion-body .tags_wrapper {
@@ -433,7 +490,8 @@ canvas {
   box-shadow: unset;
 }
 
-.media:nth-child(odd), .item-same:nth-child(odd) {
+.media:nth-child(odd),
+.item-same:nth-child(odd) {
   border-right: 1px solid #0000001a;
 }
 
@@ -759,7 +817,7 @@ canvas {
 
 .dots_wrapp {
   position: absolute;
-  right: 40px;
+  right: 50px;
   top: 50%;
   transform: translate(0px, -50%);
   width: 35px;
@@ -771,6 +829,10 @@ canvas {
   z-index: 999;
 }
 
+.dots_wrapp::after {
+  display: none;
+}
+
 .dots_wrapp:hover {
   background-color: #efefef;
   transition: all ease .6s;
@@ -779,9 +841,5 @@ canvas {
 .dots_wrapp i {
   color: #172239;
   font-size: 16px;
-}
-
-.accordion-button:not(.collapsed)::after {
-  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(96%) contrast(104%);
 }
 /*# sourceMappingURL=style.v2.0.css.map */
