@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="description" content="Web Design" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="author" content="Manik MT" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <!-- Font awsome style -->
+  <script src="https://kit.fontawesome.com/92527efa3b.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" />
+  <link href="https://kenwheeler.github.io/slick/slick/slick-theme.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Custom css -->
+  <link rel="stylesheet" href="./assets/css/style.v2.0.css" />
+  <title>Analysis</title>
+</head>
+
+<body>
+  <!-- page header starting -->
+  <nav class="navbar navbar-sticky-top Gradient">
+    <a href="./add_tag.html" style="position: absolute; left: 5%; color: white; cursor: pointer">
+      <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+    </a>
+    <h4>Analysis</h4>
+  </nav>
+  <!-- page header ending -->
+  <div class="backdrop "></div>
+  <div class="pop-up-delete">
+    <img class="del-icon-pop" src="../assets/images/cross_icon.svg" alt="">
+    <img class="pop-icon" src="../assets/images/popIcon.png" alt="">
+    <h3 class="text-center text-bold">Are you sure?</h3>
+    <p class="pop-descp">Lorem ipsum dolor sit amet consectetur</p>
+    <button class="pop-up-done-btn">Done</button>
+    <button class="pop-up-back-btn">Back</button>
+  </div>
+
+  <!-- banner start -->
+  <section class="banner">
+
+    <div class="container">
+
+      <!-- analysis top banner -->
+      <section class="common_card">
+        <!-- choose date select -->
+        <select class="form-select mb-3" aria-label="Default select example">
+          <option selected>Choose date</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <!-- feature select -->
+        <div class="row mb-3">
+          <div class="col-5 my-auto">
+            <label class="commonLabel" for="">Select Feature
+              <i title="text text text" class="fa-solid fa-info-circle"></i>
+            </label>
+          </div>
+          <div class="col-7">
+            <div class="mutleSelect">
+              <select class="js-select2 form-select customInputs" multiple="multiple">
+                <option value="1">Seatle</option>
+                <option value="2">Glasgow</option>
+                <option value="3">Amsterdam</option>
+                <option value="4">Zagreb</option>
+                <option value="5">Munich</option>
+                <option value="6">Barcelona</option>
+              </select>
+            </div>
+           
+            <!-- <select class="form-select customInputs">
+              <option selected="selected">EmoFreq/Energy</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select> -->
+          </div>
+
+        </div>
+        <!-- exclude feature select -->
+        <div class="row mb-3">
+          <div class="col-5 my-auto">
+            <label class="commonLabel" for="">Exclude Feature
+              <i title="text text text" class="fa-solid fa-info-circle"></i>
+            </label>
+          </div>
+          <div class="col-7">
+            <div class="mutleSelect">
+              <select class="js-select2 form-select customInputs" multiple="multiple">
+                <option value="1">Seatle</option>
+                <option value="2">Glasgow</option>
+                <option value="3">Amsterdam</option>
+                <option value="4">Zagreb</option>
+                <option value="5">Munich</option>
+                <option value="6">Barcelona</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <!-- exclude feature select -->
+        <div class="row mb-3">
+          <div class="col-5 my-auto">
+            <label class="commonLabel" for="">Remaining days
+              <i title="text text text" class="fa-solid fa-info-circle"></i>
+            </label>
+            <p class="subLabel">Untill next analysis</p>
+          </div>
+          <div class="col-7">
+            <input type="text" class="form-control" placeholder="1 Week">
+          </div>
+        </div>
+
+        <!-- remaining details -->
+        <div class="common_wrapp" style="border-top: 0.5px solid #00000026;">
+          <div class="row">
+            <div class="col-6">
+              <div class="remDays_info remDays_border">
+                <label class="commonLabel" for="">Remainng analysis:</label>
+                <p>00</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="remDays_info">
+                <label class="commonLabel" for="">Remaining days:</label>
+                <p>00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- remaining details -->
+        <div class="common_wrapp">
+          <div class="row">
+            <div class="col-6 my-auto">
+              <label class="commonLabel" for="">Send email
+                <i title="text text text" class="fa-solid fa-info-circle"></i>
+              </label>
+            </div>
+            <div class="col-6 my-auto d-flex justify-content-end">
+              <div class="form-check ms-auto">
+                <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- remaining details -->
+        <div class="common_wrapp">
+          <div class="row">
+            <div class="col-6 my-auto">
+              <label class="commonLabel" for="">Include features
+                <i title="text text text" class="fa-solid fa-info-circle"></i>
+              </label>
+            </div>
+            <div class="col-6 my-auto d-flex justify-content-end">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- analyze button -->
+        <div class="row">
+          <div class="col-12">
+            <a href="" class="btn btn_analyze">Analyze</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!-- banner end-->
+
+  <!-- main body start -->
+  <main class="common-body">
+    <div class="container">
+      <div class="accordion general_accordion" id="accordionRecord">
+        <!-- 1st record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingOne">
+            <div class="dateTime_wrapp">
+              <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+              <div class="date_wrapp"><span class="bold-text">14</span>
+                <d class="date">Jan, 2021
+              </div>
+              <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+            </div>
+            <!-- date & time info -->
+            <button class="accordion-button collapse_btn  " type="button" data-bs-toggle="collapse"
+              data-bs-target="#recordOne" aria-expanded="false" aria-controls="recordOne">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <div class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </span>
+                <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                  <li> <a class="dropdown-item dropdown-delete-item" href="#">
+                      <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5.6 2.56098H8.4C8.4 2.17285 8.2525 1.80063 7.98995 1.52619C7.7274 1.25174 7.3713 1.09756 7 1.09756C6.6287 1.09756 6.2726 1.25174 6.01005 1.52619C5.7475 1.80063 5.6 2.17285 5.6 2.56098ZM4.55 2.56098C4.55 2.22466 4.61337 1.89164 4.7365 1.58093C4.85962 1.27022 5.04008 0.987901 5.26759 0.750092C5.49509 0.512284 5.76518 0.323644 6.06243 0.194943C6.35967 0.0662416 6.67826 0 7 0C7.32174 0 7.64033 0.0662416 7.93757 0.194943C8.23482 0.323644 8.50491 0.512284 8.73241 0.750092C8.95992 0.987901 9.14038 1.27022 9.2635 1.58093C9.38663 1.89164 9.45 2.22466 9.45 2.56098H13.475C13.6142 2.56098 13.7478 2.61879 13.8462 2.72171C13.9447 2.82463 14 2.96421 14 3.10976C14 3.2553 13.9447 3.39489 13.8462 3.4978C13.7478 3.60072 13.6142 3.65854 13.475 3.65854H12.551L11.732 12.5202C11.6692 13.1993 11.3666 13.8295 10.8834 14.2879C10.4001 14.7464 9.77082 15.0003 9.1182 15H4.8818C4.2293 15.0001 3.60017 14.7461 3.11706 14.2877C2.63396 13.8292 2.33151 13.1991 2.2687 12.5202L1.449 3.65854H0.525C0.385761 3.65854 0.252225 3.60072 0.153769 3.4978C0.0553123 3.39489 0 3.2553 0 3.10976C0 2.96421 0.0553123 2.82463 0.153769 2.72171C0.252225 2.61879 0.385761 2.56098 0.525 2.56098H4.55ZM5.95 6.03659C5.95 5.89104 5.89469 5.75146 5.79623 5.64854C5.69777 5.54562 5.56424 5.4878 5.425 5.4878C5.28576 5.4878 5.15223 5.54562 5.05377 5.64854C4.95531 5.75146 4.9 5.89104 4.9 6.03659V11.5244C4.9 11.6699 4.95531 11.8095 5.05377 11.9124C5.15223 12.0154 5.28576 12.0732 5.425 12.0732C5.56424 12.0732 5.69777 12.0154 5.79623 11.9124C5.89469 11.8095 5.95 11.6699 5.95 11.5244V6.03659ZM8.575 5.4878C8.43576 5.4878 8.30223 5.54562 8.20377 5.64854C8.10531 5.75146 8.05 5.89104 8.05 6.03659V11.5244C8.05 11.6699 8.10531 11.8095 8.20377 11.9124C8.30223 12.0154 8.43576 12.0732 8.575 12.0732C8.71424 12.0732 8.84777 12.0154 8.94623 11.9124C9.04469 11.8095 9.1 11.6699 9.1 11.5244V6.03659C9.1 5.89104 9.04469 5.75146 8.94623 5.64854C8.84777 5.54562 8.71424 5.4878 8.575 5.4878Z"
+                          fill="#D30A0A" />
+                      </svg> Delete </a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.44 12.67H0.56C0.25025 12.67 0 12.9202 0 13.23V13.86C0 13.937 0.063 14 0.14 14H13.86C13.937 14 14 13.937 14 13.86V13.23C14 12.9202 13.7498 12.67 13.44 12.67ZM2.54975 11.2C2.58475 11.2 2.61975 11.1965 2.65475 11.1912L5.59825 10.675C5.63325 10.668 5.6665 10.6523 5.691 10.626L13.1093 3.20775C13.1255 3.19156 13.1383 3.17233 13.1471 3.15116C13.1559 3.12999 13.1604 3.10729 13.1604 3.08437C13.1604 3.06146 13.1559 3.03876 13.1471 3.01759C13.1383 2.99642 13.1255 2.97719 13.1093 2.961L10.2008 0.05075C10.1675 0.0175 10.1237 0 10.0765 0C10.0293 0 9.9855 0.0175 9.95225 0.05075L2.534 7.469C2.50775 7.49525 2.492 7.52675 2.485 7.56175L1.96875 10.5052C1.95173 10.599 1.95781 10.6955 1.98647 10.7864C2.01514 10.8772 2.06552 10.9597 2.13325 11.0267C2.24875 11.1388 2.394 11.2 2.54975 11.2Z"
+                          fill="#A858E1" />
+                      </svg>
+                      Edit </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </h2>
+
+          <!-- accordion body -->
+
+          <div id="recordOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <!-- analysis period -->
+              <div class="commonLabel">
+                Analysis Period:
+                <span class="date">2022.07.01 - 2022.08.01</span>
+              </div>
+              <!-- section divider -->
+              <div class="borderLine"></div>
+              <div class="progress_head">
+                <div class="commonLabel">
+                  Emotional Frequency:
+                  <i title="text text text" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div class="commonLabel averageLabel">
+                  Average :
+                  <div class="average_value">
+                    <p>450</p>
+                    <i class="fas fa-caret-up"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper progress_analysis">
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- energy details -->
+                <div class="progress_head">
+                  <div class="commonLabel">
+                    Energy
+                    <i title="text text text" class="fa-solid fa-info-circle"></i>
+                  </div>
+                  <div class="commonLabel averageLabel">
+                    Average :
+                    <div class="average_value">
+                      <p>08</p>
+                      <i class="fas fa-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- progress section  end-->
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- notes setion starts -->
+                <section>
+                  <label class="commonLabel mb-3" for="">Notes</label>
+                  <div class="form-group mb-3">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+                </section>
+
+                <!-- rating section -->
+                <section class="rating_section">
+                  <h5>How accurate results?</h5>
+                  <p>Select 1-5 Starts (collect feedback form user)</p>
+                  <div class="rating_stars">
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </section>
+
+                 <!-- section divider -->
+                 <div class="borderLine"></div>
+
+                 <!-- share button -->
+                 <div>
+                  <a href="" class="btn btn_share"><i class="fas fa-share-alt"></i>Share Report</a>
+                 </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 1st record end -->
+
+
+        <!-- 2nd record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingTwo">
+            <!-- date & time info -->
+            <div class="dateTime_wrapp">
+              <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+              <div class="date_wrapp"><span class="bold-text">14</span>
+                <d class="date">Jan, 2021
+              </div>
+              <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+            </div>
+            <!-- date & time info -->
+            <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#recordTwo" aria-expanded="false" aria-controls="recordTwo">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <div class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </span>
+                <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                  <li> <a class="dropdown-item dropdown-delete-item" href="#"><svg width="14" height="15"
+                        viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5.6 2.56098H8.4C8.4 2.17285 8.2525 1.80063 7.98995 1.52619C7.7274 1.25174 7.3713 1.09756 7 1.09756C6.6287 1.09756 6.2726 1.25174 6.01005 1.52619C5.7475 1.80063 5.6 2.17285 5.6 2.56098ZM4.55 2.56098C4.55 2.22466 4.61337 1.89164 4.7365 1.58093C4.85962 1.27022 5.04008 0.987901 5.26759 0.750092C5.49509 0.512284 5.76518 0.323644 6.06243 0.194943C6.35967 0.0662416 6.67826 0 7 0C7.32174 0 7.64033 0.0662416 7.93757 0.194943C8.23482 0.323644 8.50491 0.512284 8.73241 0.750092C8.95992 0.987901 9.14038 1.27022 9.2635 1.58093C9.38663 1.89164 9.45 2.22466 9.45 2.56098H13.475C13.6142 2.56098 13.7478 2.61879 13.8462 2.72171C13.9447 2.82463 14 2.96421 14 3.10976C14 3.2553 13.9447 3.39489 13.8462 3.4978C13.7478 3.60072 13.6142 3.65854 13.475 3.65854H12.551L11.732 12.5202C11.6692 13.1993 11.3666 13.8295 10.8834 14.2879C10.4001 14.7464 9.77082 15.0003 9.1182 15H4.8818C4.2293 15.0001 3.60017 14.7461 3.11706 14.2877C2.63396 13.8292 2.33151 13.1991 2.2687 12.5202L1.449 3.65854H0.525C0.385761 3.65854 0.252225 3.60072 0.153769 3.4978C0.0553123 3.39489 0 3.2553 0 3.10976C0 2.96421 0.0553123 2.82463 0.153769 2.72171C0.252225 2.61879 0.385761 2.56098 0.525 2.56098H4.55ZM5.95 6.03659C5.95 5.89104 5.89469 5.75146 5.79623 5.64854C5.69777 5.54562 5.56424 5.4878 5.425 5.4878C5.28576 5.4878 5.15223 5.54562 5.05377 5.64854C4.95531 5.75146 4.9 5.89104 4.9 6.03659V11.5244C4.9 11.6699 4.95531 11.8095 5.05377 11.9124C5.15223 12.0154 5.28576 12.0732 5.425 12.0732C5.56424 12.0732 5.69777 12.0154 5.79623 11.9124C5.89469 11.8095 5.95 11.6699 5.95 11.5244V6.03659ZM8.575 5.4878C8.43576 5.4878 8.30223 5.54562 8.20377 5.64854C8.10531 5.75146 8.05 5.89104 8.05 6.03659V11.5244C8.05 11.6699 8.10531 11.8095 8.20377 11.9124C8.30223 12.0154 8.43576 12.0732 8.575 12.0732C8.71424 12.0732 8.84777 12.0154 8.94623 11.9124C9.04469 11.8095 9.1 11.6699 9.1 11.5244V6.03659C9.1 5.89104 9.04469 5.75146 8.94623 5.64854C8.84777 5.54562 8.71424 5.4878 8.575 5.4878Z"
+                          fill="#D30A0A" />
+                      </svg> Delete </a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.44 12.67H0.56C0.25025 12.67 0 12.9202 0 13.23V13.86C0 13.937 0.063 14 0.14 14H13.86C13.937 14 14 13.937 14 13.86V13.23C14 12.9202 13.7498 12.67 13.44 12.67ZM2.54975 11.2C2.58475 11.2 2.61975 11.1965 2.65475 11.1912L5.59825 10.675C5.63325 10.668 5.6665 10.6523 5.691 10.626L13.1093 3.20775C13.1255 3.19156 13.1383 3.17233 13.1471 3.15116C13.1559 3.12999 13.1604 3.10729 13.1604 3.08437C13.1604 3.06146 13.1559 3.03876 13.1471 3.01759C13.1383 2.99642 13.1255 2.97719 13.1093 2.961L10.2008 0.05075C10.1675 0.0175 10.1237 0 10.0765 0C10.0293 0 9.9855 0.0175 9.95225 0.05075L2.534 7.469C2.50775 7.49525 2.492 7.52675 2.485 7.56175L1.96875 10.5052C1.95173 10.599 1.95781 10.6955 1.98647 10.7864C2.01514 10.8772 2.06552 10.9597 2.13325 11.0267C2.24875 11.1388 2.394 11.2 2.54975 11.2Z"
+                          fill="#A858E1" />
+                      </svg> Edit </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </h2>
+
+          <!-- accordion body -->
+
+          <div id="recordTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <!-- analysis period -->
+              <div class="commonLabel">
+                Analysis Period:
+                <span class="date">2022.07.01 - 2022.08.01</span>
+              </div>
+              <!-- section divider -->
+              <div class="borderLine"></div>
+              <div class="progress_head">
+                <div class="commonLabel">
+                  Emotional Frequency:
+                  <i title="text text text" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div class="commonLabel averageLabel">
+                  Average :
+                  <div class="average_value">
+                    <p>450</p>
+                    <i class="fas fa-caret-up"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper progress_analysis">
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- energy details -->
+                <div class="progress_head">
+                  <div class="commonLabel">
+                    Energy
+                    <i title="text text text" class="fa-solid fa-info-circle"></i>
+                  </div>
+                  <div class="commonLabel averageLabel">
+                    Average :
+                    <div class="average_value">
+                      <p>08</p>
+                      <i class="fas fa-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- progress section  end-->
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- notes setion starts -->
+                <section>
+                  <label class="commonLabel mb-3" for="">Notes</label>
+                  <div class="form-group mb-3">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+                </section>
+
+                <!-- rating section -->
+                <section class="rating_section">
+                  <h5>How accurate results?</h5>
+                  <p>Select 1-5 Starts (collect feedback form user)</p>
+                  <div class="rating_stars">
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </section>
+
+                 <!-- section divider -->
+                 <div class="borderLine"></div>
+
+                 <!-- share button -->
+                 <div>
+                  <a href="" class="btn btn_share"><i class="fas fa-share-alt"></i>Share Report</a>
+                 </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 2nd record end -->
+        <!-- 3rd record start -->
+        <div class="accordion-item">
+          <!-- accordion header -->
+          <h2 class="accordion-header" id="headingThree">
+            <!-- date & time info -->
+            <div class="dateTime_wrapp">
+              <div class="dates-formate">2022-02-10 15:00:33.267582</div>
+              <div class="date_wrapp"><span class="bold-text">14</span>
+                <d class="date">Jan, 2021
+              </div>
+              <div class="time"><i class="fa-solid fa-clock"></i><span class="time-text">10:30 AM</span></div>
+            </div>
+            <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#recordThree" aria-expanded="false" aria-controls="recordThree">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <!-- record cta -->
+            <div class="record-cta">
+              <div class="dropdown">
+                <span class="dropdown-toggle dots_wrapp" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </span>
+                <ul class="dropdown-menu  element-menu" aria-labelledby="dropdownMenuButton1">
+                  <li> <a class="dropdown-item dropdown-delete-item" href="#">
+                      <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5.6 2.56098H8.4C8.4 2.17285 8.2525 1.80063 7.98995 1.52619C7.7274 1.25174 7.3713 1.09756 7 1.09756C6.6287 1.09756 6.2726 1.25174 6.01005 1.52619C5.7475 1.80063 5.6 2.17285 5.6 2.56098ZM4.55 2.56098C4.55 2.22466 4.61337 1.89164 4.7365 1.58093C4.85962 1.27022 5.04008 0.987901 5.26759 0.750092C5.49509 0.512284 5.76518 0.323644 6.06243 0.194943C6.35967 0.0662416 6.67826 0 7 0C7.32174 0 7.64033 0.0662416 7.93757 0.194943C8.23482 0.323644 8.50491 0.512284 8.73241 0.750092C8.95992 0.987901 9.14038 1.27022 9.2635 1.58093C9.38663 1.89164 9.45 2.22466 9.45 2.56098H13.475C13.6142 2.56098 13.7478 2.61879 13.8462 2.72171C13.9447 2.82463 14 2.96421 14 3.10976C14 3.2553 13.9447 3.39489 13.8462 3.4978C13.7478 3.60072 13.6142 3.65854 13.475 3.65854H12.551L11.732 12.5202C11.6692 13.1993 11.3666 13.8295 10.8834 14.2879C10.4001 14.7464 9.77082 15.0003 9.1182 15H4.8818C4.2293 15.0001 3.60017 14.7461 3.11706 14.2877C2.63396 13.8292 2.33151 13.1991 2.2687 12.5202L1.449 3.65854H0.525C0.385761 3.65854 0.252225 3.60072 0.153769 3.4978C0.0553123 3.39489 0 3.2553 0 3.10976C0 2.96421 0.0553123 2.82463 0.153769 2.72171C0.252225 2.61879 0.385761 2.56098 0.525 2.56098H4.55ZM5.95 6.03659C5.95 5.89104 5.89469 5.75146 5.79623 5.64854C5.69777 5.54562 5.56424 5.4878 5.425 5.4878C5.28576 5.4878 5.15223 5.54562 5.05377 5.64854C4.95531 5.75146 4.9 5.89104 4.9 6.03659V11.5244C4.9 11.6699 4.95531 11.8095 5.05377 11.9124C5.15223 12.0154 5.28576 12.0732 5.425 12.0732C5.56424 12.0732 5.69777 12.0154 5.79623 11.9124C5.89469 11.8095 5.95 11.6699 5.95 11.5244V6.03659ZM8.575 5.4878C8.43576 5.4878 8.30223 5.54562 8.20377 5.64854C8.10531 5.75146 8.05 5.89104 8.05 6.03659V11.5244C8.05 11.6699 8.10531 11.8095 8.20377 11.9124C8.30223 12.0154 8.43576 12.0732 8.575 12.0732C8.71424 12.0732 8.84777 12.0154 8.94623 11.9124C9.04469 11.8095 9.1 11.6699 9.1 11.5244V6.03659C9.1 5.89104 9.04469 5.75146 8.94623 5.64854C8.84777 5.54562 8.71424 5.4878 8.575 5.4878Z"
+                          fill="#D30A0A" />
+                      </svg> Delete </a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.44 12.67H0.56C0.25025 12.67 0 12.9202 0 13.23V13.86C0 13.937 0.063 14 0.14 14H13.86C13.937 14 14 13.937 14 13.86V13.23C14 12.9202 13.7498 12.67 13.44 12.67ZM2.54975 11.2C2.58475 11.2 2.61975 11.1965 2.65475 11.1912L5.59825 10.675C5.63325 10.668 5.6665 10.6523 5.691 10.626L13.1093 3.20775C13.1255 3.19156 13.1383 3.17233 13.1471 3.15116C13.1559 3.12999 13.1604 3.10729 13.1604 3.08437C13.1604 3.06146 13.1559 3.03876 13.1471 3.01759C13.1383 2.99642 13.1255 2.97719 13.1093 2.961L10.2008 0.05075C10.1675 0.0175 10.1237 0 10.0765 0C10.0293 0 9.9855 0.0175 9.95225 0.05075L2.534 7.469C2.50775 7.49525 2.492 7.52675 2.485 7.56175L1.96875 10.5052C1.95173 10.599 1.95781 10.6955 1.98647 10.7864C2.01514 10.8772 2.06552 10.9597 2.13325 11.0267C2.24875 11.1388 2.394 11.2 2.54975 11.2Z"
+                          fill="#A858E1" />
+                      </svg> Edit </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </h2>
+
+          <!-- accordion body -->
+
+          <div id="recordThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionRecord">
+            <div class="accordion-body">
+              <!-- analysis period -->
+              <div class="commonLabel">
+                Analysis Period:
+                <span class="date">2022.07.01 - 2022.08.01</span>
+              </div>
+              <!-- section divider -->
+              <div class="borderLine"></div>
+              <div class="progress_head">
+                <div class="commonLabel">
+                  Emotional Frequency:
+                  <i title="text text text" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div class="commonLabel averageLabel">
+                  Average :
+                  <div class="average_value">
+                    <p>450</p>
+                    <i class="fas fa-caret-up"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- progress section  start -->
+              <div class="progress_wrapper progress_analysis">
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- energy details -->
+                <div class="progress_head">
+                  <div class="commonLabel">
+                    Energy
+                    <i title="text text text" class="fa-solid fa-info-circle"></i>
+                  </div>
+                  <div class="commonLabel averageLabel">
+                    Average :
+                    <div class="average_value">
+                      <p>08</p>
+                      <i class="fas fa-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- positive trends -->
+                  <div class="col-6 border_cus_right">
+                    <h5 class="trend_title">POSITIVE</h5>
+
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- negative trends -->
+                  <div class="col-6">
+                    <h5 class="trend_title trend_title__neg">NEGATIVE</h5>
+                    <!-- positive item 1 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Discipline</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 2 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Have Fun</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per50"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 3 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Sports</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per60"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 4 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Yoga</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- positive item 5 -->
+                    <div class="item-same my-1">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div class="text">
+                            <p>Studying</p>
+                          </div>
+                        </div>
+                        <div class="col-6 align-self-center">
+                          <div class="bar">
+                            <div class="inner-bar w-per90"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- progress section  end-->
+                <!-- section divider -->
+                <div class="borderLine"></div>
+                <!-- notes setion starts -->
+                <section>
+                  <label class="commonLabel mb-3" for="">Notes</label>
+                  <div class="form-group mb-3">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+                </section>
+
+                <!-- rating section -->
+                <section class="rating_section">
+                  <h5>How accurate results?</h5>
+                  <p>Select 1-5 Starts (collect feedback form user)</p>
+                  <div class="rating_stars">
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </section>
+
+                 <!-- section divider -->
+                 <div class="borderLine"></div>
+
+                 <!-- share button -->
+                 <div>
+                  <a href="" class="btn btn_share"><i class="fas fa-share-alt"></i>Share Report</a>
+                 </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 3rd record end -->
+      </div>
+    </div>
+  </main>
+  <!-- main body end -->
+
+  <!-- main body ending -->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom bg-light">
+    <div class="container RowFlex" id="navBtns">
+      <!--Emotions    -->
+      <a href="./emotions.html" class="navIcon " id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.399" height="24.081" viewBox="0 0 27.399 24.081">
+          <g opacity="0.5" id="feeling" transform="translate(0 -31)">
+            <path id="Path_923" data-name="Path 923"
+              d="M8.081,197.054a8,8,0,0,0,7.926-7.021,9.637,9.637,0,0,1-6.312-8.871,8.033,8.033,0,1,0-1.614,15.892Zm2.408-11.238a.8.8,0,1,1-.8.8A.8.8,0,0,1,10.489,185.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,5.673,185.816Zm-1.442,5.136a4.812,4.812,0,0,1,7.7,0,.8.8,0,1,1-1.282.966,3.3,3.3,0,0,0-5.135,0,.8.8,0,1,1-1.282-.966Z"
+              transform="translate(0 -141.973)"></path>
+            <path id="Path_924" data-name="Path 924"
+              d="M219.027,31a8.027,8.027,0,1,0,8.081,8.027A8.037,8.037,0,0,0,219.027,31Zm2.408,4.816a.8.8,0,1,1-.8.8A.8.8,0,0,1,221.435,35.816Zm-4.816,0a.8.8,0,1,1-.8.8A.8.8,0,0,1,216.619,35.816Zm6.258,4.5a4.812,4.812,0,0,1-7.7,0,.8.8,0,0,1,1.283-.966,3.3,3.3,0,0,0,5.135,0,.8.8,0,1,1,1.282.966Z"
+              transform="translate(-199.708 0)"></path>
+          </g>
+        </svg>
+      </a>
+      <!--Calendar - logs    -->
+      <a href="./calendar.html" class="navIcon " id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.068" height="24.081" viewBox="0 0 20.068 24.081">
+          <path opacity="0.5" id="book"
+            d="M3.048,2.007h17.02V0H3.01A3.016,3.016,0,0,0,0,3V21.071a3.019,3.019,0,0,0,3.01,3.01H19.064a1.006,1.006,0,0,0,1-1V4.014H15.051v4.8a.5.5,0,0,1-.853.351L13.044,8.027,11.89,9.181a.5.5,0,0,1-.853-.351V4.014H3.01a1.006,1.006,0,0,1-1-1V2.948A1.028,1.028,0,0,1,3.048,2.007ZM6.02,14.048h8.027v2.007H6.02Zm0,4.014h8.027v2.007H6.02Zm0,0">
+          </path>
+        </svg>
+      </a>
+      <!--Analysis-->
+      <a href="./analysis.html" class="navIcon active" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.081" height="24.081" viewBox="0 0 24.081 24.081">
+          <g opacity="0.5" id="brain">
+            <path id="Path_921" data-name="Path 921"
+              d="M3.81,4.468q0,.165.012.329a4.467,4.467,0,0,0-2.817,7.244,4.467,4.467,0,0,0,2.817,7.244q-.012.164-.012.329a4.466,4.466,0,0,0,7.525,3.256V1.213A4.466,4.466,0,0,0,3.81,4.468Z"
+              transform="translate(0 0)"></path>
+            <circle id="Ellipse_78" data-name="Ellipse 78" cx="0.5" cy="0.5" r="0.5"
+              transform="translate(15.541 6.541)"></circle>
+            <path id="Path_922" data-name="Path 922"
+              d="M282.335,9.219A4.475,4.475,0,0,0,278.513,4.8q.012-.164.012-.329A4.466,4.466,0,0,0,271,1.213V6.632h1.532a2.117,2.117,0,1,1,0,1.411H271v3.292h3.414a2.117,2.117,0,1,1,0,1.411H271v3.292h1.532a2.117,2.117,0,1,1,0,1.411H271v5.419a4.466,4.466,0,0,0,7.525-3.256q0-.165-.012-.329a4.467,4.467,0,0,0,2.817-7.244A4.469,4.469,0,0,0,282.335,9.219Z"
+              transform="translate(-258.254)"></path>
+            <ellipse id="Ellipse_79" data-name="Ellipse 79" cx="0.5" cy="1" rx="0.5" ry="1"
+              transform="translate(15.541 15.541)"></ellipse>
+            <circle id="Ellipse_80" data-name="Ellipse 80" cx="0.5" cy="0.5" r="0.5"
+              transform="translate(17.541 11.541)"></circle>
+          </g>
+        </svg>
+      </a>
+      <!--More-->
+      <a href="./more.html" class="navIcon" id="navLink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18.314" height="4.226" viewBox="0 0 18.314 4.226">
+          <g opacity="0.7" id="dots" transform="translate(-3 17.226) rotate(-90)">
+            <path id="XMLID_294_" d="M13,15.113A2.113,2.113,0,1,0,15.113,13,2.116,2.116,0,0,0,13,15.113Z"
+              transform="translate(0 -2.956)"></path>
+            <path id="XMLID_295_" d="M13,25.113A2.113,2.113,0,1,0,15.113,23,2.116,2.116,0,0,0,13,25.113Z"
+              transform="translate(0 -5.913)"></path>
+            <path id="XMLID_297_" d="M13,5.113A2.113,2.113,0,1,0,15.113,3,2.116,2.116,0,0,0,13,5.113Z"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- fixed end-->
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"></script>
+  <script src="./assets/js/chart_dummy.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</body>
+
+<script>
+  // theme select2
+  function selectRefresh() {
+        $('.themeDropdown').select2({
+            placeholder: "Please select",
+            allowClear: false,
+            minimumResultsForSearch: -1,
+            width: '100%',
+
+        });
+    }
+
+    selectRefresh();
+
+
+
+    $(".js-select2").select2({
+        placeholder: "EmoFreq/Energy",
+        dropdownCssClass: "mutleSelect",
+        tags: true,
+
+    });
+    var multiSArray = [];
+    $('.js-select2').on('select2:select', function (e) {
+        var data = e.params.data;
+        multiSArray.push(data.id);
+        if (multiSArray.length > 2) {
+            var uldiv = $(this).siblings('span.select2').find('ul')
+            var count = uldiv.find('li').length;
+            uldiv.html("<li class='selectioncountmulti'>" + count + " items selected</li>")
+        }
+    });
+</script>
+
+
+</html>

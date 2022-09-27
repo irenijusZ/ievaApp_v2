@@ -102,7 +102,10 @@ dateCard.forEach(r => {
 })
 
 
-
+// rating
+$('.rating_stars .fa-star').click(function() {
+  $(this).toggleClass('clicked_star');
+})
 
 
 });
