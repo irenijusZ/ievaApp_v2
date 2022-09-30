@@ -171,7 +171,7 @@
         <!-- analyze button -->
         <div class="row">
           <div class="col-12">
-            <a href="" class="btn btn_analyze">Analyze</a>
+            <a href="javascript:void(0)" class="btn btn_analyze" onclick="submitAnalyze()">Analyze</a>
           </div>
         </div>
       </section>
@@ -1620,40 +1620,38 @@
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </body>
-
 <script>
   // theme select2
   function selectRefresh() {
-        $('.themeDropdown').select2({
-            placeholder: "Please select",
-            allowClear: false,
-            minimumResultsForSearch: -1,
-            width: '100%',
+    $('.themeDropdown').select2({
+      placeholder: "Please select",
+      allowClear: false,
+      minimumResultsForSearch: -1,
+      width: '100%',
+    });
+  }
 
-        });
+  selectRefresh();
+
+  $(".js-select2").select2({
+    placeholder: "EmoFreq/Energy",
+    dropdownCssClass: "mutleSelect",
+    tags: true,
+  });
+  var multiSArray = [];
+  $('.js-select2').on('select2:select', function(e) {
+    var data = e.params.data;
+    multiSArray.push(data.id);
+    if (multiSArray.length > 2) {
+      var uldiv = $(this).siblings('span.select2').find('ul')
+      var count = uldiv.find('li').length;
+      uldiv.html("<li class='selectioncountmulti'>" + count + " items selected</li>")
     }
+  });
 
-    selectRefresh();
-
-
-
-    $(".js-select2").select2({
-        placeholder: "EmoFreq/Energy",
-        dropdownCssClass: "mutleSelect",
-        tags: true,
-
-    });
-    var multiSArray = [];
-    $('.js-select2').on('select2:select', function (e) {
-        var data = e.params.data;
-        multiSArray.push(data.id);
-        if (multiSArray.length > 2) {
-            var uldiv = $(this).siblings('span.select2').find('ul')
-            var count = uldiv.find('li').length;
-            uldiv.html("<li class='selectioncountmulti'>" + count + " items selected</li>")
-        }
-    });
+  function submitAnalyze() {
+    var analysis_request_json = { "period_start": "2022-02-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
+    console.log(analysis_request_json)
+  }
 </script>
-
-
 </html>
