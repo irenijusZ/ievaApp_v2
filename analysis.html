@@ -77,7 +77,7 @@
                 <option value="yoga">Yoga</option>
               </select>
             </div>
-           
+
             <!-- <select class="form-select customInputs">
               <option selected="selected">EmoFreq/Energy</option>
               <option value="1">One</option>
@@ -171,7 +171,7 @@
         <!-- analyze button -->
         <div class="row">
           <div class="col-12">
-            <a href="javascript:void(0)" class="btn btn_analyze" onclick="submitAnalyze()">Analyze</a>
+            <a href="javascript:void(0)" class="btn btn_analyze" onclick="submitAnalyze()" id="analysisBtn">Analyze</a>
           </div>
         </div>
       </section>
@@ -1649,9 +1649,34 @@
     }
   });
 
+  feature_list = ['EmoFreq', 'Energy', 'meditation_mins', 'gratitude', 'awareness_moments', 'mPhaseD', 'sports', 'plank', 'sudina diena']
+
+  remaining_days = 5  // if this = 0 then make section invisible, button disabled - greyed out
+  tester = 1  // if tester = 1, make all features availble, else list contains only 2 features ['EmoFreq', 'Energy']
+
+
   function submitAnalyze() {
-    var analysis_request_json = { "period_start": "2022-02-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
-    console.log(analysis_request_json)
+    analysis_request_data = { "period_start": "2022-06-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
+    // Pop-up: "Analyis Ongoing, Results will appear shortly, please come back later"
+    // $.ajax({
+    //       url:'',
+    //       type: 'GET',
+    //       data: {'analysis_request': JSON.stringify(analysis_request_data)},
+    //       // data: {'analysis_request': analysis_request_data},
+    //       success: function(response){
+    //                 window.location = '#';
+    //                 console.log('Analysis completed')
+                    // Call pop-up: "Analysis completed"
+    //               }
+    //     });
+
+    console.log(JSON.stringify(analysis_request_data))
+    console.log(analysis_request_data)
+
+    // Disable Button after it's pressed
+    var element = document.getElementById('analysisBtn');
+    element.setAttribute("disabled", "disabled");
+    console.log('disabled button')
   }
 </script>
 </html>
