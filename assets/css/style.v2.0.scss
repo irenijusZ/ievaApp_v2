@@ -1214,10 +1214,14 @@ button.collapse_btn {
     width: 30px;
     margin-top: -4px;
     -webkit-transition: 0.5s ease;
-    transition: 0.5s ease;
-    
+    transition: 0.5s ease; 
 }
 
 .mutleSelect .select2-container {
     width: 100% !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: transparent;
+    opacity: 1;
 }
