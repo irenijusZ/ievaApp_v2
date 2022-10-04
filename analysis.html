@@ -68,7 +68,7 @@
           </div>
           <div class="col-7">
             <div class="mutleSelect">
-              <select class="js-select2 form-select customInputs" multiple="multiple">
+              <select class="js-select2 form-select customInputs" multiple="multiple" id="selectFeatures">
                 <option value="emoFreq">EmoFreq</option>
                 <option value="energy">Energy</option>
                 <option value="having_fun">Having Fun</option>
@@ -88,7 +88,7 @@
           </div>
           <div class="col-7">
             <div class="mutleSelect">
-              <select class="js-select2 form-select customInputs" multiple="multiple">
+              <select class="js-select2 form-select customInputs" multiple="multiple" id="excludeFeatures">
                 <option value="emoFreq">EmoFreq</option>
                 <option value="energy">Energy</option>
                 <option value="having_fun">Having Fun</option>
@@ -1600,6 +1600,9 @@
 
 <script>
   // theme select2
+  var features = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
+  var features_ex = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
+
   function selectRefresh() {
         $('.themeDropdown').select2({
             placeholder: "Please select",
@@ -1611,8 +1614,6 @@
     }
 
     selectRefresh();
-
-
 
     $(".js-select2").select2({
         placeholder: "EmoFreq/Energy",
@@ -1630,7 +1631,31 @@
             uldiv.html("<li class='selectioncountmulti'>" + count + " items selected</li>")
         }
     });
+  $('#selectFeatures').change(function() {
+    let selectedFeatures = $(this).val();
+    $(features).each(function(index, feature) {
+      if(selectedFeatures.includes(feature)) {
+        $("select#excludeFeatures option[value="+feature+"]").attr('disabled', true)
+      } else {
+        $("select#excludeFeatures option[value="+feature+"]").attr('disabled', false)
+      }
+    });
+  });
+
+  $('#excludeFeatures').change(function() {
+    let selectedFeatures = $(this).val();
+    $(features_ex).each(function(index, feature) {
+      if(selectedFeatures.includes(feature)) {
+        $("select#selectFeatures option[value="+feature+"]").attr('disabled', true)
+      } else {
+        $("select#selectFeatures option[value="+feature+"]").attr('disabled', false)
+      }
+    });
+  });
+
+  function submitAnalyze() {
+    var analysis_request_json = { "period_start": "2022-02-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
+    console.log(analysis_request_json)
+  }
 </script>
-
-
 </html>
