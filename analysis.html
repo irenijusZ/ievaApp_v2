@@ -60,12 +60,12 @@
         <!-- choose date select -->
         <select class="form-select mb-3" aria-label="Default select example" id="datepickerSelect">
           <option selected>Choose Period</option>
-          <option value="1">Last 15 days</option>
-          <option value="2">Last 30 days</option>
-		      <option value="2">Whole period</option>
-          <option value="3">Custom</option>
+          <option value="15">Last 15 days</option>
+          <option value="30">Last 30 days</option>
+		      <option value="whole_period">Whole period</option>
+          <option value="custom">Custom</option>
         </select>
-        <input id="datepicker" class="form-control mb-3" />
+        <input id="datepicker" class="form-control mb-3" style="display: none;" />
         <!-- feature select -->
         <div class="row mb-3">
           <div class="col-5 my-auto">
@@ -108,7 +108,7 @@
 
         </div>
         <!-- exclude feature select -->
-        <div class="row mb-3">
+        <div class="row mb-3" id="rDays_row">
           <div class="col-5 my-auto">
             <label class="commonLabel" for="">Remaining days
               <i title="text text text" class="fa-solid fa-info-circle"></i>
@@ -121,7 +121,7 @@
         </div>
 
         <!-- remaining details -->
-        <div class="common_wrapp" id="rDays_row" style="border-top: 0.5px solid #00000026;">
+        <div class="common_wrapp" style="border-top: 0.5px solid #00000026;">
           <div class="row">
             <div class="col-6">
               <div class="remDays_info remDays_border">
@@ -230,8 +230,7 @@
 
           <!-- accordion body -->
 
-          <div id="recordOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionRecord">
+          <div id="recordOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
             <div class="accordion-body">
               <!-- analysis period -->
               <div class="commonLabel">Analysis Period:<span class="date">2022.07.01 - 2022.08.01</span></div>
@@ -671,8 +670,7 @@
 
           <!-- accordion body -->
 
-          <div id="recordTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionRecord">
+          <div id="recordTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
             <div class="accordion-body">
               <!-- analysis period -->
               <div class="commonLabel">
@@ -1122,8 +1120,7 @@
 
           <!-- accordion body -->
 
-          <div id="recordThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionRecord">
+          <div id="recordThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
             <div class="accordion-body">
               <!-- analysis period -->
               <div class="commonLabel">Analysis Period: <span class="date">2022.07.01 - 2022.08.01</span></div>
@@ -1608,14 +1605,14 @@
 
 <script>
   var data = {};
-  var timezone = (new Date().getTimezoneOffset()) / 60;
+  var timezone = - (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
   data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
   // theme select2
   var features = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
   var features_ex = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
-  var rDays = 0;
-  if(rDays == 1) $('#rDays_row').css('display', 'none')
+  var rDays = 2;
+  if(rDays != 0) $('#rDays_row').css('display', 'none')
 
   function selectRefresh() {
         $('.themeDropdown').select2({
@@ -1719,8 +1716,20 @@
   }
 
   $('#datepickerSelect').change(function() {
-    if(this.value == 3) {
-
+    var start_date = ''
+    var end_date = ''
+    if(this.value == 'custom') {
+      $('#datepicker').css('display', 'block');
+      $('#datepicker').click();
+    } else if(this.value == 'whole_period') {
+      start_date = '2022-01-01'
+      end_date = moment(new Date()).format('YYYY-MM-DD');
+      data['start_date'] = start_date;
+      data['end_date'] = end_date;
+    } else {
+      $('#datepicker').css('display', 'none');
+      let value = parseInt(this.value)
+      console.log(moment().subtract(value, 'days'))
     }
   })
 
@@ -1741,7 +1750,7 @@
       }
     },
     LockPlugin: {
-      minDate: new Date(),
+      maxDate: new Date(),
       minDays: 2,
       inseparable: true,
     }
