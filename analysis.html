@@ -58,13 +58,13 @@
       <!-- analysis top banner -->
       <section class="common_card">
         <!-- choose date select -->
-        <!-- <select class="form-select mb-3" aria-label="Default select example">
+        <select class="form-select mb-3" aria-label="Default select example" id="datepickerSelect">
           <option selected>Choose Period</option>
           <option value="1">Last 15 days</option>
           <option value="2">Last 30 days</option>
-		  <option value="2">Whole period</option>
+		      <option value="2">Whole period</option>
           <option value="3">Custom</option>
-        </select> -->
+        </select>
         <input id="datepicker" class="form-control mb-3" />
         <!-- feature select -->
         <div class="row mb-3">
@@ -121,7 +121,7 @@
         </div>
 
         <!-- remaining details -->
-        <div class="common_wrapp" style="border-top: 0.5px solid #00000026;">
+        <div class="common_wrapp" id="rDays_row" style="border-top: 0.5px solid #00000026;">
           <div class="row">
             <div class="col-6">
               <div class="remDays_info remDays_border">
@@ -600,9 +600,9 @@
                   <h5>How accurate results?</h5>
                   <p>Select 1-5 Starts (collect feedback form user)</p>
                   <div class="rating_stars">
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
@@ -1054,9 +1054,9 @@
                   <h5>How accurate results?</h5>
                   <p>Select 1-5 Starts (collect feedback form user)</p>
                   <div class="rating_stars">
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
@@ -1502,9 +1502,9 @@
                   <h5>How accurate results?</h5>
                   <p>Select 1-5 Starts (collect feedback form user)</p>
                   <div class="rating_stars">
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
-                    <i class="fas fa-star clicked_star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
@@ -1614,7 +1614,8 @@
   // theme select2
   var features = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
   var features_ex = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
-
+  var rDays = 0;
+  if(rDays == 1) $('#rDays_row').css('display', 'none')
 
   function selectRefresh() {
         $('.themeDropdown').select2({
@@ -1717,22 +1718,33 @@
     console.log(data)
   }
 
+  $('#datepickerSelect').change(function() {
+    if(this.value == 3) {
+
+    }
+  })
+
+  $('.rating_stars i').click(function() {
+    let starts = this.parentElement.querySelectorAll('.clicked_star').length;
+    console.log(starts + 1)
+  })
+
   const picker = new easepick.create({
-        element: document.getElementById('datepicker'),
-        css: [
-          'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css'
-        ],
-        plugins: ['RangePlugin', 'LockPlugin'],
-        RangePlugin: {
-          tooltipNumber(num) {
-            return num - 1;
-          }
-        },
-        LockPlugin: {
-          minDate: new Date(),
-          minDays: 2,
-          inseparable: true,
-        }
-      });
+    element: document.getElementById('datepicker'),
+    css: [
+      'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css'
+    ],
+    plugins: ['RangePlugin', 'LockPlugin'],
+    RangePlugin: {
+      tooltipNumber(num) {
+        return num - 1;
+      }
+    },
+    LockPlugin: {
+      minDate: new Date(),
+      minDays: 2,
+      inseparable: true,
+    }
+  });
 </script>
 </html>
