@@ -23,8 +23,14 @@
   <!-- Custom css -->
   <link rel="stylesheet" href="./assets/css/style.v2.0.css" />
   <title>Analysis</title>
-</head>
+  <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
 
+  <style type="text/css">
+    .easepick-wrapper{
+      z-index: 999;
+    }
+  </style>
+</head>
 <body>
   <!-- page header starting -->
   <nav class="navbar navbar-sticky-top Gradient">
@@ -52,14 +58,14 @@
       <!-- analysis top banner -->
       <section class="common_card">
         <!-- choose date select -->
-        <select class="form-select mb-3" aria-label="Default select example">
+        <!-- <select class="form-select mb-3" aria-label="Default select example">
           <option selected>Choose Period</option>
           <option value="1">Last 15 days</option>
           <option value="2">Last 30 days</option>
 		  <option value="2">Whole period</option>
           <option value="3">Custom</option>
-        </select>
-
+        </select> -->
+        <input id="datepicker" class="form-control mb-3" />
         <!-- feature select -->
         <div class="row mb-3">
           <div class="col-5 my-auto">
@@ -86,7 +92,7 @@
             <label class="commonLabel" for="">Exclude Feature(s)<i title="text text text" class="fa-solid fa-info-circle"></i>
             </label>
           </div>
-          <!-- <input type="text" name="dates"> -->
+
           <div class="col-7">
             <div class="mutleSelect">
               <select class="js-select2 form-select customInputs" multiple="multiple" id="excludeFeatures">
@@ -585,7 +591,7 @@
                 <section>
                   <label class="commonLabel mb-3" for="">Notes</label>
                   <div class="form-group mb-3">
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
                   </div>
                 </section>
 
@@ -1039,7 +1045,7 @@
                 <section>
                   <label class="commonLabel mb-3" for="">Notes</label>
                   <div class="form-group mb-3">
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
                   </div>
                 </section>
 
@@ -1487,7 +1493,7 @@
                 <section>
                   <label class="commonLabel mb-3" for="">Notes</label>
                   <div class="form-group mb-3">
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
                   </div>
                 </section>
 
@@ -1601,7 +1607,6 @@
 </body>
 
 <script>
-  // $('input[name="dates"]').daterangepicker();
   var data = {};
   var timezone = (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
@@ -1661,7 +1666,7 @@
     });
   });
 
-  let dateCard = document.querySelectorAll('.accordion')
+  let dateCard = document.querySelectorAll('.accordion-item')
   dateCard.forEach(r => {
     var getDate = r.querySelector('.dates-formate')
     if (!getDate) return;
@@ -1674,8 +1679,36 @@
       minute: 'numeric',
       hour12: true
     })
+
+    r.querySelector("textarea")["id"] = getDate.textContent
   })
 
+  function createOptions(selector, dataOpt) {
+    const featureSelect = document.getElementById(selector);
+    for (let key in dataOpt) {
+      let option = document.createElement("option");
+      option.setAttribute('value', features[key]);
+
+      let optionText = document.createTextNode(features[key].capitalize());
+      option.appendChild(optionText);
+
+      featureSelect.appendChild(option);
+    }
+  }
+
+  function notes(event) {
+    console.log(event.currentTarget.value)
+  }
+
+  Object.defineProperty(String.prototype, 'capitalize', {
+    value: function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+    },
+    enumerable: false
+  });
+
+  createOptions('selectFeatures', features);
+  createOptions('excludeFeatures', features_ex);
   function submitAnalyze() {
     data['features'] = $('#selectFeatures').val();
     data['features_exc'] = $('#excludeFeatures').val();
@@ -1683,5 +1716,23 @@
     var analysis_request_json = { "period_start": "2022-02-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
     console.log(data)
   }
+
+  const picker = new easepick.create({
+        element: document.getElementById('datepicker'),
+        css: [
+          'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css'
+        ],
+        plugins: ['RangePlugin', 'LockPlugin'],
+        RangePlugin: {
+          tooltipNumber(num) {
+            return num - 1;
+          }
+        },
+        LockPlugin: {
+          minDate: new Date(),
+          minDays: 2,
+          inseparable: true,
+        }
+      });
 </script>
 </html>
