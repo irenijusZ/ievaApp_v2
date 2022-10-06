@@ -112,10 +112,24 @@
           <div class="col-7">
             <input type="text" class="form-control" disabled placeholder="1 Week">
           </div>
+        </div
+
+		</div>
+        <!-- exclude feature select -->
+        <div class="row mb-3" id="rAnalysis_row">
+          <div class="col-5 my-auto">
+            <label class="commonLabel" for="">Analysis Left
+              <i title="text text text" class="fa-solid fa-info-circle"></i>
+            </label>
+            <!-- <p class="subLabel">Untill next analysis</p> -->
+          </div>
+          <div class="col-7">
+            <input type="text" class="form-control" disabled placeholder="1 Week">
+          </div>
         </div>
 
         <!-- remaining details -->
-        <div class="common_wrapp" style="border-top: 0.5px solid #00000026;">
+        <!-- <div class="common_wrapp" style="border-top: 0.5px solid #00000026;">
           <div class="row">
             <div class="col-6">
               <div class="remDays_info remDays_border">
@@ -130,9 +144,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+
         <!-- remaining details -->
-        <div class="common_wrapp">
+        <!-- <div class="common_wrapp">
           <div class="row">
             <div class="col-6 my-auto">
               <label class="commonLabel" for="">Send email
@@ -145,9 +160,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- remaining details -->
-        <div class="common_wrapp">
+        <!-- <div class="common_wrapp">
           <div class="row">
             <div class="col-6 my-auto">
               <label class="commonLabel" for="">Include features
@@ -160,7 +175,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- analyze button -->
         <div class="row">
@@ -1605,8 +1620,9 @@
   // theme select2
   var features = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
   var features_ex = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
-  var rDays = 2;
-  if(rDays != 0) $('#rDays_row').css('display', 'none')
+  var rDays = 0;
+  if(rDays == 0) $('#rDays_row').css('display', 'none')
+  if(rDays != 0) $('#rAnalysis_row').css('display', 'none')
 
   function selectRefresh() {
         $('.themeDropdown').select2({
