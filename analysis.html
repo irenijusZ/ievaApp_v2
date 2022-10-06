@@ -24,12 +24,6 @@
   <link rel="stylesheet" href="./assets/css/style.v2.0.css" />
   <title>Analysis</title>
   <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
-
-  <style type="text/css">
-    .easepick-wrapper{
-      z-index: 999;
-    }
-  </style>
 </head>
 <body>
   <!-- page header starting -->
@@ -75,12 +69,12 @@
           <div class="col-7">
             <div class="mutleSelect">
               <select class="js-select2 form-select customInputs" multiple="multiple" id="selectFeatures">
-                <option value="emoFreq">EmoFreq</option>
-                <option value="energy">Energy</option>
-                <option value="having_fun">Having Fun</option>
-                <option value="sports">Sports</option>
-                <option value="alcohol">Alcohol</option>
-                <option value="yoga">Yoga</option>
+                <!-- <option value="emoFreq">EmoFreq</option> -->
+                <!-- <option value="energy">Energy</option> -->
+                <!-- <option value="having_fun">Having Fun</option> -->
+                <!-- <option value="sports">Sports</option> -->
+                <!-- <option value="alcohol">Alcohol</option> -->
+                <!-- <option value="yoga">Yoga</option> -->
               </select>
             </div>
           </div>
@@ -96,12 +90,12 @@
           <div class="col-7">
             <div class="mutleSelect">
               <select class="js-select2 form-select customInputs" multiple="multiple" id="excludeFeatures">
-                <option value="emoFreq">EmoFreq</option>
-                <option value="energy">Energy</option>
-                <option value="having_fun">Having Fun</option>
-                <option value="sports">Sports</option>
-                <option value="alcohol">Alcohol</option>
-                <option value="yoga">Yoga</option>
+                <!-- <option value="emoFreq">EmoFreq</option> -->
+                <!-- <option value="energy">Energy</option> -->
+                <!-- <option value="having_fun">Having Fun</option> -->
+                <!-- <option value="sports">Sports</option> -->
+                <!-- <option value="alcohol">Alcohol</option> -->
+                <!-- <option value="yoga">Yoga</option> -->
               </select>
             </div>
           </div>
@@ -1646,9 +1640,7 @@
     let selectedFeatures = $(this).val();
     $(features).each(function(index, feature) {
       if(selectedFeatures.includes(feature)) {
-        $("select#excludeFeatures option[value="+feature+"]").attr('disabled', true)
-      } else {
-        $("select#excludeFeatures option[value="+feature+"]").attr('disabled', false)
+        $("select#excludeFeatures option[value="+feature+"]").remove();
       }
     });
   });
@@ -1657,9 +1649,7 @@
     let selectedFeatures = $(this).val();
     $(features_ex).each(function(index, feature) {
       if(selectedFeatures.includes(feature)) {
-        $("select#selectFeatures option[value="+feature+"]").attr('disabled', true)
-      } else {
-        $("select#selectFeatures option[value="+feature+"]").attr('disabled', false)
+        $("select#selectFeatures option[value="+feature+"]").remove();
       }
     });
   });
@@ -1711,25 +1701,33 @@
     data['features'] = $('#selectFeatures').val();
     data['features_exc'] = $('#excludeFeatures').val();
 
+    if($('#datepickerSelect').val() == 'custom') {
+      let range = $('#datepicker').val();
+      data['period_start'] = range.split(" - ")[0]
+      data['period_end'] = range.split(" - ")[1]
+    }
+
     var analysis_request_json = { "period_start": "2022-02-01", "period_end": "2022-10-01", "features": ["EmoFreq", "Energy"], "features_exc": ["meditation_mins", "gratitude", "awareness_moments", "mPhaseD", "sports", "plank", "sudina diena"], "datetime_tz": "2022-02-10 15:00:33.267582", "timezone": 3}
     console.log(data)
   }
 
   $('#datepickerSelect').change(function() {
-    var start_date = ''
-    var end_date = ''
+    var period_start = ''
+    var period_end = ''
     if(this.value == 'custom') {
       $('#datepicker').css('display', 'block');
       $('#datepicker').click();
     } else if(this.value == 'whole_period') {
-      start_date = '2022-01-01'
-      end_date = moment(new Date()).format('YYYY-MM-DD');
-      data['start_date'] = start_date;
-      data['end_date'] = end_date;
+      $('#datepicker').css('display', 'none');
+      period_start = '2022-01-01'
+      period_end = moment(new Date()).format('YYYY-MM-DD');
+      data['period_start'] = period_start;
+      data['period_end'] = period_end;
     } else {
       $('#datepicker').css('display', 'none');
-      let value = parseInt(this.value)
-      console.log(moment().subtract(value, 'days'))
+      let value = moment().subtract(parseInt(this.value), 'days')
+      data['period_start'] = moment(value).format('YYYY-MM-DD');
+      data['period_end'] = moment(new Date()).format('YYYY-MM-DD');
     }
   })
 
@@ -1744,10 +1742,11 @@
       'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css'
     ],
     plugins: ['RangePlugin', 'LockPlugin'],
+    zIndex: 999,
     RangePlugin: {
       tooltipNumber(num) {
         return num - 1;
-      }
+      },
     },
     LockPlugin: {
       maxDate: new Date(),
