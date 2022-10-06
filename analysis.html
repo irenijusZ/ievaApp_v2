@@ -1618,9 +1618,10 @@
   data['timezone'] = timezone;
   data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
   // theme select2
-  var features = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
-  var features_ex = ['emoFreq', 'energy', 'having_fun', 'sports', 'alcohol', 'yoga'];
-  var rDays = 0;
+  var features = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
+  var features_ex = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
+
+  var rDays = 5;
   if(rDays == 0) $('#rDays_row').css('display', 'none')
   if(rDays != 0) $('#rAnalysis_row').css('display', 'none')
 
