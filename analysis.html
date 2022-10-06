@@ -1646,7 +1646,7 @@
     var multiSArray = [];
     $('.js-select2').on('select2:select', function (e) {
       var data = e.params.data;
-      if(e.currentTarget.id == 'selectFeatures' && multiSArray.length <2) {
+      if((e.currentTarget.id == 'excludeFeatures')) {
         multiSArray.push(data.id);
         if (multiSArray.length > 2) {
             var uldiv = $(this).siblings('span.select2').find('ul')
@@ -1661,12 +1661,12 @@
     if(selectedFeatures.length <= 2) {
       $(features).each(function(index, feature) {
       if(selectedFeatures.includes(feature)) {
-        $("select#excludeFeatures option[value="+feature+"]").remove();
+        $("select#excludeFeatures option[value='"+feature+"']").remove();
       }});
     } else {
-      $('.js-select2').siblings('span.select2').find('ul').find('li').last().remove();
       selectedFeatures.pop();
       $(this).val(selectedFeatures);
+      $('#selectFeatures').siblings('span.select2').find('ul').find('li').last().remove();
     }
   });
 
@@ -1674,7 +1674,7 @@
     let selectedFeatures = $(this).val();
     $(features_ex).each(function(index, feature) {
       if(selectedFeatures.includes(feature)) {
-        $("select#selectFeatures option[value="+feature+"]").remove();
+        $("select#selectFeatures option[value='"+feature+"']").remove();
       }
     });
   });
