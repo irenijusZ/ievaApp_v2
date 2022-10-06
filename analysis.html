@@ -1645,21 +1645,29 @@
     });
     var multiSArray = [];
     $('.js-select2').on('select2:select', function (e) {
-        var data = e.params.data;
+      var data = e.params.data;
+      if(e.currentTarget.id == 'selectFeatures' && multiSArray.length <2) {
         multiSArray.push(data.id);
         if (multiSArray.length > 2) {
             var uldiv = $(this).siblings('span.select2').find('ul')
             var count = uldiv.find('li').length;
             uldiv.html("<li class='selectioncountmulti'>" + count + " items selected</li>")
         }
-    });
-  $('#selectFeatures').change(function() {
-    let selectedFeatures = $(this).val();
-    $(features).each(function(index, feature) {
-      if(selectedFeatures.includes(feature)) {
-        $("select#excludeFeatures option[value="+feature+"]").remove();
       }
     });
+
+  $('#selectFeatures').change(function() {
+    let selectedFeatures = $(this).val();
+    if(selectedFeatures.length <= 2) {
+      $(features).each(function(index, feature) {
+      if(selectedFeatures.includes(feature)) {
+        $("select#excludeFeatures option[value="+feature+"]").remove();
+      }});
+    } else {
+      $('.js-select2').siblings('span.select2').find('ul').find('li').last().remove();
+      selectedFeatures.pop();
+      $(this).val(selectedFeatures);
+    }
   });
 
   $('#excludeFeatures').change(function() {
