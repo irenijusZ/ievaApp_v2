@@ -175,6 +175,10 @@ ul {
   padding: 70px 0 12px 0;
 }
 
+.banner .common_card {
+  margin-bottom: 0px;
+}
+
 .banner select {
   font-weight: 300;
   font-size: 12px;
@@ -1038,12 +1042,18 @@ button.collapse_btn:hover {
   opacity: 0.5;
 }
 
-.rating_stars .fa-star {
-  color: rgba(23, 34, 57, 0.05);
-  cursor: pointer;
+.rating {
+  box-shadow: unset !important;
+  padding: 0px !important;
 }
 
-.rating_stars .fa-star:hover, .rating_stars .fa-star.clicked_star {
+.rating .fa-star {
+  color: rgba(23, 34, 57, 0.05);
+  cursor: pointer;
+  font-size: 1.2em !important;
+}
+
+.rating .fa-star:hover, .rating .fa-star.clicked_star {
   color: #FFA800;
 }
 
