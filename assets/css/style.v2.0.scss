@@ -1230,3 +1230,49 @@ button.collapse_btn {
     background-color: transparent;
     opacity: 1;
 }
+
+button.collapse_btn .fa-chevron-down {
+    transform: rotate(180deg);
+}
+button.collapse_btn.collapsed .fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before, .bs-popover-top>.popover-arrow::before {
+    display: none !important;
+}
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::after, .bs-popover-top>.popover-arrow::after {
+    display: none !important;
+}
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after, .bs-popover-end>.popover-arrow::after {
+   display: none;
+}
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before, .bs-popover-end>.popover-arrow::before {
+    display: none;
+}
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before, .bs-popover-end>.popover-arrow::before {
+    display: none;
+}
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::after, .bs-popover-end>.popover-arrow::after {
+    display: none;
+}
+.popover{
+    border: unset;
+    max-width: 230px;
+    left: 30px !important;
+}
+.popover-body {
+    background-color: rgb(225,  243, 252);
+     font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #172239;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.popover-header{
+    display: none;
+}
