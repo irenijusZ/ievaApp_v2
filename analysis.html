@@ -63,8 +63,12 @@
         <section class="common_card">
           <!-- choose date select -->
           <select class="form-select mb-3" aria-label="Default select example" id="datepickerSelect">
+<<<<<<< Updated upstream
             <!-- <option>Choose Period</option> -->
             <option selected value="30">Last 30 days</option>
+=======
+            <option selected>Choose Period</option>
+>>>>>>> Stashed changes
             <option value="15">Last 15 days</option>
             <!-- <option value="30">Last 30 days</option> -->
             <option value="whole_period">Whole period</option>
@@ -1728,6 +1732,23 @@
   createOptions('excludeFeatures', features_ex);
 
   function submitAnalyze() {
+    let dateRange = $('#datepickerSelect').val();
+    let features = $('#selectFeatures').val();
+
+    if(dateRange == 'Choose Period') {
+      $('#datepickerSelect').css("border", "1px solid red")
+    } else {
+      $('#datepickerSelect').css("border", "none")
+    }
+
+    if(features.length == 0) {
+      $(".mutleSelect").first().css("border", "1px solid red")
+    } else {
+      $(".mutleSelect").first().css("border", "none")
+    }
+
+    if(dateRange == 'Choose Period' || features.length == 0) return;
+
     data['features'] = $('#selectFeatures').val();
     data['features_exc'] = $('#excludeFeatures').val();
 
