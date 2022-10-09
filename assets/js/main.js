@@ -57,8 +57,7 @@ deleteItem.forEach(e => {
   e.addEventListener('click', function deleteItemHandelar(e) {
     document.querySelector('.pop-up-delete').classList.add("show");
     document.querySelector('.backdrop').classList.add("show");
-    selectForDel = e.target.parentElement.parentElement.parentElement.parentElement.parentElement
-      .parentElement.parentElement
+    selectForDel = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement
 
   })
 })
