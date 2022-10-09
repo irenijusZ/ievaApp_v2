@@ -610,7 +610,7 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
@@ -1051,7 +1051,7 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
@@ -1487,7 +1487,7 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notes(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
@@ -1619,6 +1619,7 @@
 <script>
   var clicked = false;
   var data = {};
+  var notesStars = {};
   var timezone = - (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
   data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
@@ -1703,7 +1704,8 @@
       hour12: true
     })
   
-    r.querySelector("textarea")["id"] = getDate.textContent
+    r.querySelector("textarea")["id"] = `notes-${getDate.textContent}`
+    r.querySelector('.rating')['id'] = `rating-${getDate.textContent}`
   })
   
   function createOptions(selector, dataOpt) {
@@ -1719,8 +1721,10 @@
     }
   }
   
-  function notes(event) {
-    console.log(event.currentTarget.value)
+  function notesAndStars(event) {
+    notesStars['notes'] = event.currentTarget.value
+    notesStars['datetime_tz'] = event.currentTarget['id'].replace('notes-', '')
+    console.log(notesStars)
   }
   
   createOptions('selectFeatures', features);
@@ -1760,12 +1764,7 @@
       data['period_end'] = moment(new Date()).format('YYYY-MM-DD');
     }
   })
-  
-  $('.rating_stars i').click(function() {
-    let starts = this.parentElement.querySelectorAll('.clicked_star').length;
-    console.log(starts + 1)
-  })
-  
+
   const picker = new easepick.create({
     element: document.getElementById('datepicker'),
     css: [
