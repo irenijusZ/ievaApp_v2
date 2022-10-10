@@ -1623,9 +1623,18 @@
 
 
 <script>
-  var clicked = false;
   var data = {};
   var notesStars = {};
+  var notes = [
+      {
+        'datetime_tz': '2022-02-12 15:16:33.267582',
+        'notes': "I'm Rizwan Ali, full stack developer."
+      },
+      {
+        'datetime_tz': '2022-02-10 15:00:33.267582',
+        'notes': 'From Pakistan'
+      }
+  ];
   var timezone = - (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
   data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
@@ -1710,6 +1719,8 @@
       hour12: true
     })
 
+    let note = notes.find(x => x.datetime_tz == getDate.textContent)
+    r.querySelector("textarea").value = note["notes"]
     r.querySelector("textarea")["id"] = `notes-${getDate.textContent}`
     r.querySelector('.rating')['id'] = `rating-${getDate.textContent}`
   })
@@ -1758,7 +1769,7 @@
       $('#datepicker').css('border', '1px solid #efefef')
     }
 
-    if((dateRange == 'custom' && $('#datepicker').val() == '') || features.length == 0) return;
+    if((dateRange == 'custom' && $('#datepicker').val() == '') || features.length == 0 || dateRange == 'Choose Period') return;
 
     data['features'] = $('#selectFeatures').val();
     data['features_exc'] = $('#excludeFeatures').val();
