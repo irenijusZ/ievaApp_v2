@@ -1738,11 +1738,18 @@
 
     if(features.length == 0) {
       $(".mutleSelect").first().css("border", "1px solid red")
+      $(".mutleSelect").first().css("border-radius", "8px")
     } else {
       $(".mutleSelect").first().css("border", "none")
     }
 
-    if(dateRange == 'Choose Period' || features.length == 0) return;
+    if(dateRange == 'custom' && $('#datepicker').val() == '') {
+      $('#datepicker').css('border', '1px solid red')
+    } else {
+      $('#datepicker').css('border', 'none')
+    }
+
+    if(dateRange == 'Choose Period' || features.length == 0 || $('#datepicker').val() == '') return;
 
     data['features'] = $('#selectFeatures').val();
     data['features_exc'] = $('#excludeFeatures').val();
