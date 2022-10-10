@@ -113,15 +113,28 @@ ul {
   background: white;
   z-index: 555555555555555555555555;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   visibility: hidden;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pop-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 10px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #172239;
+  margin-bottom: 10px;
 }
 
 .del-icon-pop {
   display: block;
   float: right;
-  width: 24px;
-  margin: 10px;
+  width: 15px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .pop-icon {
@@ -132,38 +145,52 @@ ul {
   width: 70px;
 }
 
+.popup_icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.popup_icon img {
+  margin-left: 14px;
+}
+
 .pop-descp {
-  font-size: 17px;
-  padding: 5px 55px;
-  font-weight: bold;
-  color: #b2bec3;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #172239;
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+.modal_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.modal_btns button {
+  width: 96px;
+  border-radius: 3px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .pop-up-done-btn {
-  background: linear-gradient(to right, #0099ff, #7902ce, #E017CE) no-repeat;
-  font-size: 21px;
-  padding: 7px;
-  color: white;
-  width: 202px;
-  margin: auto;
-  display: block;
-  border-radius: 10px;
-  font-weight: 700;
-  border: none;
+  color: #D30A0A;
+  border: 1px solid #D30A0A;
 }
 
 .pop-up-back-btn {
-  background: white;
-  font-size: 21px;
-  padding: 7px;
-  color: #E017CE;
-  width: 202px;
-  margin: auto;
-  display: block;
-  border-radius: 10px;
-  font-weight: 700;
-  border: 2px solid #E017CE;
-  margin-top: 10px;
+  background: #A858E1;
+  color: #fff;
 }
 
 .show {
@@ -1174,7 +1201,7 @@ button.collapse_btn:hover {
   font-weight: 300;
   font-size: 12px;
   line-height: 9px;
-  color: #17223a4d;
+  color: #1722399c;
 }
 
 .mutleSelect .select2-container--default .select2-selection--multiple::before {
@@ -1235,12 +1262,13 @@ button.collapse_btn.collapsed .fa-chevron-down {
 
 .popover {
   border: unset;
-  max-width: 230px;
-  left: 30px !important;
+  max-width: 300px;
+  left: 40px !important;
 }
 
 .popover-body {
-  background-color: #e1f3fc;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px #00000026;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
