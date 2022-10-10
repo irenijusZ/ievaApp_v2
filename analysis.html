@@ -1742,20 +1742,20 @@
     if(dateRange == 'Choose Period') {
       $('#datepickerSelect').css("border", "1px solid red")
     } else {
-      $('#datepickerSelect').css("border", "none")
+      $('#datepickerSelect').css("border", "1px solid #efefef")
     }
 
     if(features.length == 0) {
       $(".mutleSelect").first().css("border", "1px solid red")
       $(".mutleSelect").first().css("border-radius", "8px")
     } else {
-      $(".mutleSelect").first().css("border", "none")
+      $(".mutleSelect").first().css("border", "1px solid #efefef")
     }
 
     if(dateRange == 'custom' && $('#datepicker').val() == '') {
       $('#datepicker').css('border', '1px solid red')
     } else {
-      $('#datepicker').css('border', 'none')
+      $('#datepicker').css('border', '1px solid #efefef')
     }
 
     if((dateRange == 'custom' && $('#datepicker').val() == '') || features.length == 0) return;
