@@ -1791,7 +1791,10 @@
     var period_end = ''
     if(this.value == 'custom') {
       $('#datepicker').css('display', 'block');
-      $('#datepicker').click();
+      setTimeout(function(){
+        $('#datepicker').focus();
+        $('#datepicker').click();
+      }, 200)
     } else if(this.value == 'whole_period') {
       $('#datepicker').css('display', 'none');
       period_start = '2022-01-01'
