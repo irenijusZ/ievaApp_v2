@@ -23,6 +23,11 @@
     <title>Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
   </head>
+  <style type="text/css">
+    .select-color {
+      color: #1722399c !important;
+    }
+  </style>
   
   <body>
     <!-- page header starting -->
@@ -1760,7 +1765,7 @@
       $(".mutleSelect").first().css("border", "1px solid red")
       $(".mutleSelect").first().css("border-radius", "8px")
     } else {
-      $(".mutleSelect").first().css("border", "1px solid #efefef")
+      $(".mutleSelect").first().css("border", "inherit")
     }
 
     if(dateRange == 'custom' && $('#datepicker').val() == '') {
@@ -1787,6 +1792,8 @@
   }
 
   $('#datepickerSelect').change(function() {
+    if(this.value == 'Choose Period') { $(this).removeClass('select-color') }
+    else $(this).addClass('select-color')
     var period_start = ''
     var period_end = ''
     if(this.value == 'custom') {
