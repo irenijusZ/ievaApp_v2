@@ -54,7 +54,9 @@
     position: absolute;
     transform: scale(0);
     transform-origin: top left;
-    transition: transform 0.3s ease-out;
+    /* transition time */
+    transition: transform 0.3s ease-in;
+
 }
 .container.calc {
     height: auto;
@@ -275,7 +277,8 @@
 @media (max-width: 480px) {
     .container:not(.inline) {
         transform: scaleY(0) !important;
-        transform-origin: bottom center !important;
+        /* animation effect */
+        transform-origin: top center !important;
     }
     .container:not(.inline).show {
         left: 0 !important;
