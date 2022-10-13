@@ -27,6 +27,22 @@
     .select-color {
       color: #1722399c !important;
     }
+    .show-div {
+      display: none;
+    }
+
+    .uppIcon img {
+      height: 50px;
+      width: 50px;
+      position: fixed;
+      bottom: 71px;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 50px;
+      padding: 0px 0px;
+      right: 11px;
+      display: block;
+    }
   </style>
   
   <body>
@@ -54,6 +70,7 @@
       </div>
     </div>
 
+
     <!-- page header ending -->
     <div class="backdrop "></div>
     <div class="pop-up-delete">
@@ -71,7 +88,7 @@
 
     </div>
     <!-- banner start -->
-    <section class="banner">
+    <section class="banner show-elemet">
       <div class="container">
         <!-- analysis top banner -->
         <section class="common_card">
@@ -1521,9 +1538,12 @@
         </div>
       </div>
     </div>
+
   </main>
   <!-- main body end -->
-
+    <div class="uppIcon show-div">
+      <img src="./assets/images/sys_circle_arrow_up.svg"  width="50px" alt="" />
+    </div>
   <!-- main body ending -->
   <nav class="navbar navbar-inverse navbar-fixed-bottom bg-light">
     <div class="container RowFlex" id="navBtns">
@@ -1625,8 +1645,23 @@
         });
       };
 </script>
+<script>
+    // Scroll UP
+  window.addEventListener("scroll", () => {
+    var docViewTop = $(window).scrollTop();
+    if (docViewTop > 200) {
+      document.querySelector(".uppIcon").classList.remove("show-div");
+    } else {
+      document.querySelector(".uppIcon").classList.add("show-div");
+    }
+  });
 
-
+    document.querySelector(".uppIcon").addEventListener("click", () => {
+    const element = document.querySelector(".show-elemet");
+    console.log('okkk')
+    element.scrollIntoView();
+  });
+</script>
 <script>
   var data = {};
   var notesStars = {};
