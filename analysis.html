@@ -1722,6 +1722,8 @@
       }
     });
 
+  $('#selectFeatures').attr('disabled', true);
+
   $('#selectFeatures').change(function() {
     let selectedFeatures = $(this).val();
     if(selectedFeatures.length <= 2) {
@@ -1862,6 +1864,17 @@
       tooltipNumber(num) {
         return num - 1;
       },
+    },
+    setup(picker) {
+      picker.on('select', (e) => {
+        let start = e.detail.start;
+        let end = e.detail.end;
+        let period_start = moment(start).format('YYYY-MM-DD hh:mm:ss');
+        let period_end = moment(end).format('YYYY-MM-DD hh:mm:ss')
+        console.log('period_start', period_start)
+        console.log('period_end', period_end)
+        $('#selectFeatures').attr('disabled', false)
+      })
     },
     LockPlugin: {
       maxDate: new Date(),
