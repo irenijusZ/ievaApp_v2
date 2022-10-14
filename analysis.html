@@ -94,7 +94,7 @@
         <section class="common_card">
           <!-- choose date select -->
           <select class="form-select mb-3" aria-label="Default select example" id="datepickerSelect">
-            <option selected>Choose Period</option>
+            <option value="">Choose Period</option>
             <option value="15">Last 15 days</option>
             <option value="30">Last 30 days</option>
             <option value="whole_period">Whole period</option>
@@ -1723,6 +1723,7 @@
     });
 
   $('#selectFeatures').attr('disabled', true);
+  $('#excludeFeatures').attr('disabled', true);
 
   $('#selectFeatures').change(function() {
     let selectedFeatures = $(this).val();
@@ -1845,13 +1846,26 @@
       period_end = moment(new Date()).format('YYYY-MM-DD');
       data['period_start'] = period_start;
       data['period_end'] = period_end;
-    } else {
+      printDatePeriod(data['period_start'], data['period_end'])
+    } else if(this.value != "") {
       $('#datepicker').css('display', 'none');
       let value = moment().subtract(parseInt(this.value), 'days')
       data['period_start'] = moment(value).format('YYYY-MM-DD');
       data['period_end'] = moment(new Date()).format('YYYY-MM-DD');
+      printDatePeriod(data['period_start'], data['period_end'])
+    } else {
+      $('#datepicker').css('display', 'none');
+      $('#excludeFeatures').attr('disabled', true)
+      $('#selectFeatures').attr('disabled', true)
     }
   })
+
+  function printDatePeriod(start, end) {
+    console.log('period_start', start)
+    console.log('period_end', end)
+    $('#excludeFeatures').attr('disabled', false)
+    $('#selectFeatures').attr('disabled', false)
+  }
 
   const picker = new easepick.create({
     element: document.getElementById('datepicker'),
