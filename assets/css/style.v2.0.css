@@ -72,7 +72,7 @@ ul {
 .navbar-sticky-top {
   position: fixed;
   width: 100%;
-  z-index: 99;
+  z-index: 99999;
   height: 50px;
   display: flex;
   align-items: center;
@@ -237,6 +237,43 @@ ul {
   background: #FFFFFF;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
+}
+
+.btn__close {
+  position: absolute;
+  right: 15px;
+  top: 9px;
+}
+
+.mood_box {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.mood_box:last-of-type {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.mood_box h5 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #172239;
+  margin-bottom: 15px;
+}
+
+.mood_box p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: rgba(23, 34, 57, 0.5);
+  margin-bottom: 10px;
 }
 
 .banner {
@@ -1309,10 +1346,20 @@ button.collapse_btn.collapsed .fa-chevron-down {
   display: none;
 }
 
+.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::before,
+.bs-popover-end > .popover-arrow::before {
+  display: none;
+}
+
+.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::after,
+.bs-popover-end > .popover-arrow::after {
+  display: none;
+}
+
 .popover {
   border: unset;
   max-width: 300px;
-  left: 40px !important;
+  z-index: 9999999999;
 }
 
 .popover-body {
@@ -1329,5 +1376,15 @@ button.collapse_btn.collapsed .fa-chevron-down {
 
 .popover-header {
   display: none;
+}
+
+.btn:hover {
+  border: unset;
+}
+
+.modalInfo_icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 /*# sourceMappingURL=style.v2.0.css.map */
