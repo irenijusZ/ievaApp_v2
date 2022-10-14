@@ -1883,8 +1883,8 @@
       picker.on('select', (e) => {
         let start = e.detail.start;
         let end = e.detail.end;
-        let period_start = moment(start).format('YYYY-MM-DD hh:mm:ss');
-        let period_end = moment(end).format('YYYY-MM-DD hh:mm:ss')
+        let period_start = moment(start).format('YYYY-MM-DD');
+        let period_end = moment(end).format('YYYY-MM-DD')
         console.log('period_start', period_start)
         console.log('period_end', period_end)
         $('#selectFeatures').attr('disabled', false)
