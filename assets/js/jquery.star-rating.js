@@ -117,6 +117,7 @@
                             }
                         });
                         notesStars['stars'] = value
+                        notesStars['notes'] = event.target.parentElement.parentElement.parentElement.previousElementSibling.querySelector("textarea").value
                         let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
                         notesStars['datetime_tz'] = id
                         console.log(notesStars)
