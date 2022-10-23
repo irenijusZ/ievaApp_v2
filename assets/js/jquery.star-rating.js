@@ -116,12 +116,14 @@
                                     .css('color', settings.starColorFull);
                             }
                         });
-                        notesStars['stars'] = value
-                        notesStars['notes'] = event.target.parentElement.parentElement.parentElement.previousElementSibling.querySelector("textarea").value
-                        let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
-                        notesStars['datetime_tz'] = id
-                        console.log(notesStars)
+
+                        // notesStars['stars'] = value
+                        // notesStars['notes'] = event.target.parentElement.parentElement.parentElement.previousElementSibling.querySelector("textarea").value
+                        // let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
+                        // notesStars['datetime_tz'] = id
+                        // console.log(notesStars)
                         wrapper.trigger('change', [value, index]);
+                        window.notesAndStars(e, value)
                     })
             }
 

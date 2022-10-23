@@ -641,14 +641,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1082,14 +1082,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1518,14 +1518,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1767,8 +1767,8 @@
 
     let note = notes.find(x => x.datetime_tz == getDate.textContent)
     r.querySelector("textarea").value = note["notes"]
-    r.querySelector("textarea")["id"] = `notes-${getDate.textContent}`
-    r.querySelector('.rating')['id'] = `rating-${getDate.textContent}`
+    r.querySelector("textarea")["id"] = `notes-${getDate.textContent.replace(/\s/g, '*')}`
+    r.querySelector('.rating')['id'] = `rating-${getDate.textContent.replace(/\s/g, '*')}`
   })
 
   function createOptions(selector, dataOpt) {
@@ -1784,9 +1784,25 @@
     }
   }
 
-  function notesAndStars(event) {
-    notesStars['notes'] = event.currentTarget.value
-    notesStars['datetime_tz'] = event.currentTarget['id'].replace('notes-', '')
+  function notesAndStars(event, value = 0) {
+    if(event.currentTarget.dataset.name == 'notes') {
+      notesStars['notes'] = event.currentTarget.value
+      let id = event.currentTarget['id'].replace('notes-', '')
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      var starCounter = 0;
+      const myElement = document.getElementById(`rating-${id}`);
+      for (const child of myElement.children[0].children) {
+        if(child.tagName == "I" && child.style["color"] == 'rgb(255, 193, 7)') {
+          starCounter += 1;
+        }
+      }
+      notesStars['stars'] = starCounter
+    } else {
+      let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
+      notesStars['stars'] = value
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      notesStars['notes'] = document.getElementById(`notes-${id}`).value
+    }
     console.log(notesStars)
   }
 
