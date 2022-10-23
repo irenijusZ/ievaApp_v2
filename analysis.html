@@ -1666,9 +1666,32 @@
   });
 </script>
 <script>
+  var notesStars = {};
+  
+  function notesAndStars(event, value = 0) {
+    if(event.currentTarget.dataset.name == 'notes') {
+      notesStars['notes'] = event.currentTarget.value
+      let id = event.currentTarget['id'].replace('notes-', '')
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      var starCounter = 0;
+      const myElement = document.getElementById(`rating-${id}`);
+      for (const child of myElement.children[0].children) {
+        if(child.tagName == "I" && child.style["color"] == 'rgb(255, 193, 7)') {
+          starCounter += 1;
+        }
+      }
+      notesStars['stars'] = starCounter
+    } else {
+      let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
+      notesStars['stars'] = value
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      notesStars['notes'] = document.getElementById(`notes-${id}`).value
+    }
+    console.log(notesStars)
+  }
+
   $(document).ready(function() {
   var data = {};
-  var notesStars = {};
   var notes = [
       {
         'datetime_tz': '2022-02-12 15:16:33.267582',
@@ -1794,28 +1817,6 @@
 
       featureSelect.appendChild(option);
     }
-  }
-
-  function notesAndStars(event, value = 0) {
-    if(event.currentTarget.dataset.name == 'notes') {
-      notesStars['notes'] = event.currentTarget.value
-      let id = event.currentTarget['id'].replace('notes-', '')
-      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
-      var starCounter = 0;
-      const myElement = document.getElementById(`rating-${id}`);
-      for (const child of myElement.children[0].children) {
-        if(child.tagName == "I" && child.style["color"] == 'rgb(255, 193, 7)') {
-          starCounter += 1;
-        }
-      }
-      notesStars['stars'] = starCounter
-    } else {
-      let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
-      notesStars['stars'] = value
-      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
-      notesStars['notes'] = document.getElementById(`notes-${id}`).value
-    }
-    console.log(notesStars)
   }
 
   createOptions('selectFeatures', features);

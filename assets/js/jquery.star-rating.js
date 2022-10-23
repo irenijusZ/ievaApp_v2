@@ -116,8 +116,8 @@
                                     .css('color', settings.starColorFull);
                             }
                         });
-                        wrapper.trigger('change', [value, index]);
                         window.notesAndStars(e, value)
+                        wrapper.trigger('change', [value, index]);
                     })
             }
 
