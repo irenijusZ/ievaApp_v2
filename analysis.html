@@ -1690,7 +1690,6 @@
     console.log(notesStars)
   }
 
-  $(document).ready(function() {
   var data = {};
   var notes = [
       {
@@ -1776,35 +1775,6 @@
       }
     });
   });
-
-  let dateCard = document.querySelectorAll('.accordion-item')
-  dateCard.forEach(r => {
-    var getDate = r.querySelector('.dates-formate')
-    if (!getDate) return;
-    var newDate = new Date(getDate.textContent.replace(/ /g, "T"))
-    r.querySelector('.bold-text').textContent = newDate.getDate()
-    const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    r.querySelector('.date').textContent = month[newDate.getMonth()] + ', ' + newDate.getFullYear()
-    r.querySelector('.time-text').textContent = newDate.toLocaleString('en-US', {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true
-    })
-
-    var note = notes.find(x => x.datetime_tz == getDate.textContent)
-    r.querySelector("textarea").value = note["notes"]
-    r.querySelector("textarea")["id"] = `notes-${getDate.textContent.replace(/\s/g, '*')}`
-    r.querySelector('.rating')['id'] = `rating-${getDate.textContent.replace(/\s/g, '*')}`
-      for(var i =0; i < note['stars']; i++) {
-        for (const child of r.querySelector('.rating').children[0].children) {
-          if(child.tagName == "I" && child.dataset.index == i) {
-            child.style["color"] = "rgb(255, 193, 7)"
-            child.classList.add("fa-star")
-            child.classList.add("fas")
-          }
-        }
-      }
-  })
 
   function createOptions(selector, dataOpt) {
     const featureSelect = document.getElementById(selector);
@@ -1929,6 +1899,38 @@
       inseparable: true,
     }
   });
-});
+</script>
+
+<script>
+  $(document).ready(function() {
+    let dateCard = document.querySelectorAll('.accordion-item')
+    dateCard.forEach(r => {
+      var getDate = r.querySelector('.dates-formate')
+      if (!getDate) return;
+      var newDate = new Date(getDate.textContent.replace(/ /g, "T"))
+      r.querySelector('.bold-text').textContent = newDate.getDate()
+      const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      r.querySelector('.date').textContent = month[newDate.getMonth()] + ', ' + newDate.getFullYear()
+      r.querySelector('.time-text').textContent = newDate.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      })
+
+      var note = notes.find(x => x.datetime_tz == getDate.textContent)
+      r.querySelector("textarea").value = note["notes"]
+      r.querySelector("textarea")["id"] = `notes-${getDate.textContent.replace(/\s/g, '*')}`
+      r.querySelector('.rating')['id'] = `rating-${getDate.textContent.replace(/\s/g, '*')}`
+      for(var i =0; i < note['stars']; i++) {
+        for (const child of r.querySelector('.rating').children[0].children) {
+          if(child.tagName == "I" && child.dataset.index == i) {
+            child.style["color"] = "rgb(255, 193, 7)"
+            child.classList.add("fa-star")
+            child.classList.add("fas")
+          }
+        }
+      }
+    })
+  })
 </script>
 </html>
