@@ -44,7 +44,7 @@
       display: block;
     }
   </style>
-  
+
   <body>
     <!-- page header starting -->
     <nav class="navbar navbar-sticky-top Gradient">
@@ -59,6 +59,8 @@
       <div class="modal-dialog modal-dialog-centered justify-content-center">
         <div class="modal-content">
           <div class="modal-body pb-0">
+            <label class="commonLabel" for="">Exclude Activities<i title="text text text" class="fa-solid fa-info-circle"  data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Select activities to exclude from the analysis. Multiple items can be chosen"></i>
+            </label>
             <p class="mb-0"> Your data is being analyzed, and it might take some time...
               <br>
               So please come back later ;-)</p>
@@ -76,6 +78,7 @@
     <div class="pop-up-delete">
       <img class="del-icon-pop" src="../assets/images/cross_icon.svg" alt="">
       <div class="popup_icon">
+        
         <img src="assets/images/delete_icon2.svg" alt="">
       </div>
       <h3 class="pop-title">Deleting Record</h3>
@@ -104,7 +107,7 @@
           <!-- feature select -->
           <div class="row mb-3">
             <div class="col-5 my-auto">
-              <label class="commonLabel" for="">Analyze Activities<i title="text text text" class="fa-solid fa-info-circle " data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Choose activities for analysis. Up to two items can be selected"></i>
+              <label class="commonLabel" for="">Analyze Activities<i title="text text text" class="fa-solid fa-info-circle " data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Choose activities for analysis. Up to two items can be selected"></i>
               </label>
             </div>
             <div class="col-7">
@@ -638,14 +641,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1079,14 +1082,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1515,14 +1518,14 @@
                   <section>
                     <label class="commonLabel mb-3" for="">Notes</label>
                     <div class="form-group mb-3">
-                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)"></textarea>
+                      <textarea class="form-control" rows="5" id="comment" onblur="notesAndStars(event)" data-name="notes"></textarea>
                     </div>
                   </section>
                   <!-- rating section -->
                   <section class="rating_section">
                     <h5>How accurate results?</h5>
                     <p>Select 1-5 Starts (collect feedback form user)</p>
-                    <div class="rating"></div>
+                    <div class="rating" data-name="rating"></div>
                   </section>
                   <!-- section divider -->
                   <div class="borderLine"></div>
@@ -1621,30 +1624,6 @@
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </body>
-
-<!-- <script>
-  var data = {};
-  var timezone = - (new Date().getTimezoneOffset()) / 60;
-  data['timezone'] = timezone;
-  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
-  // theme select2
-  var features = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa', 'Nesamone'];
-  var features_ex = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa', 'Nesamone'];
-
-  var rDays = 5;
-  if(rDays == 0) $('#rDays_row').css('display', 'none')
-  if(rDays != 0) $('#rAnalysis_row').css('display', 'none')
-
-  function selectRefresh() {
-        $('.themeDropdown').select2({
-            placeholder: "Please select",
-            allowClear: false,
-            minimumResultsForSearch: -1,
-            width: '100%',
-
-        });
-      };
-</script> -->
 <script>
     // Scroll UP
   window.addEventListener("scroll", () => {
@@ -1663,21 +1642,46 @@
   });
 </script>
 <script>
-  var data = {};
   var notesStars = {};
+  
+  function notesAndStars(event, value = 0) {
+    if(event.currentTarget.dataset.name == 'notes') {
+      notesStars['notes'] = event.currentTarget.value
+      let id = event.currentTarget['id'].replace('notes-', '')
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      var starCounter = 0;
+      const myElement = document.getElementById(`rating-${id}`);
+      for (const child of myElement.children[0].children) {
+        if(child.tagName == "I" && child.style["color"] == 'rgb(255, 193, 7)') {
+          starCounter += 1;
+        }
+      }
+      notesStars['stars'] = starCounter
+    } else {
+      let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
+      notesStars['stars'] = value
+      notesStars['datetime_tz'] = id.replace(/\*/g, ' ')
+      notesStars['notes'] = document.getElementById(`notes-${id}`).value
+    }
+    console.log(notesStars)
+  }
+
+  var data = {};
   var notes = [
       {
         'datetime_tz': '2022-02-12 15:16:33.267582',
-        'notes': "I'm Rizwan Ali, full stack developer."
+        'notes': "I'm Rizwan Ali, full stack developer.",
+        "stars": 1
       },
       {
         'datetime_tz': '2022-02-10 15:00:33.267582',
-        'notes': 'From Pakistan'
+        'notes': 'From Pakistan',
+        "stars": 5
       }
   ];
   var timezone = - (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
-  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
+  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
   // theme select2
   var features = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
   var features_ex = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
@@ -1748,26 +1752,6 @@
     });
   });
 
-  let dateCard = document.querySelectorAll('.accordion-item')
-  dateCard.forEach(r => {
-    var getDate = r.querySelector('.dates-formate')
-    if (!getDate) return;
-    var newDate = new Date(getDate.textContent.replace(/ /g, "T"))
-    r.querySelector('.bold-text').textContent = newDate.getDate()
-    const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    r.querySelector('.date').textContent = month[newDate.getMonth()] + ', ' + newDate.getFullYear()
-    r.querySelector('.time-text').textContent = newDate.toLocaleString('en-US', {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true
-    })
-
-    let note = notes.find(x => x.datetime_tz == getDate.textContent)
-    r.querySelector("textarea").value = note["notes"]
-    r.querySelector("textarea")["id"] = `notes-${getDate.textContent}`
-    r.querySelector('.rating')['id'] = `rating-${getDate.textContent}`
-  })
-
   function createOptions(selector, dataOpt) {
     const featureSelect = document.getElementById(selector);
     for (let key in dataOpt) {
@@ -1779,12 +1763,6 @@
 
       featureSelect.appendChild(option);
     }
-  }
-
-  function notesAndStars(event) {
-    notesStars['notes'] = event.currentTarget.value
-    notesStars['datetime_tz'] = event.currentTarget['id'].replace('notes-', '')
-    console.log(notesStars)
   }
 
   createOptions('selectFeatures', features);
@@ -1883,11 +1861,12 @@
       picker.on('select', (e) => {
         let start = e.detail.start;
         let end = e.detail.end;
-        let period_start = moment(start).format('YYYY-MM-DD hh:mm:ss');
-        let period_end = moment(end).format('YYYY-MM-DD hh:mm:ss')
+        let period_start = moment(start).format('YYYY-MM-DD');
+        let period_end = moment(end).format('YYYY-MM-DD')
         console.log('period_start', period_start)
         console.log('period_end', period_end)
         $('#selectFeatures').attr('disabled', false)
+        $('#excludeFeatures').attr('disabled', false)
       })
     },
     LockPlugin: {
@@ -1896,5 +1875,38 @@
       inseparable: true,
     }
   });
+</script>
+
+<script>
+  $(document).ready(function() {
+    let dateCard = document.querySelectorAll('.accordion-item')
+    dateCard.forEach(r => {
+      var getDate = r.querySelector('.dates-formate')
+      if (!getDate) return;
+      var newDate = new Date(getDate.textContent.replace(/ /g, "T"))
+      r.querySelector('.bold-text').textContent = newDate.getDate()
+      const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      r.querySelector('.date').textContent = month[newDate.getMonth()] + ', ' + newDate.getFullYear()
+      r.querySelector('.time-text').textContent = newDate.toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      })
+
+      var note = notes.find(x => x.datetime_tz == getDate.textContent)
+      r.querySelector("textarea").value = note["notes"]
+      r.querySelector("textarea")["id"] = `notes-${getDate.textContent.replace(/\s/g, '*')}`
+      r.querySelector('.rating')['id'] = `rating-${getDate.textContent.replace(/\s/g, '*')}`
+      for(var i =0; i < note['stars']; i++) {
+        for (const child of r.querySelector('.rating').children[0].children) {
+          if(child.tagName == "I" && child.dataset.index == i) {
+            child.style["color"] = "rgb(255, 193, 7)"
+            child.classList.add("fa-star")
+            child.classList.add("fas")
+          }
+        }
+      }
+    })
+  })
 </script>
 </html>

@@ -116,10 +116,7 @@
                                     .css('color', settings.starColorFull);
                             }
                         });
-                        notesStars['stars'] = value
-                        let id = event.target.parentElement.parentElement['id'].replace('rating-', '')
-                        notesStars['datetime_tz'] = id
-                        console.log(notesStars)
+                        window.notesAndStars(e, value)
                         wrapper.trigger('change', [value, index]);
                     })
             }
