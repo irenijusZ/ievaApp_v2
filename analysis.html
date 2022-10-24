@@ -1624,30 +1624,6 @@
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </body>
-
-<script>
-  var data = {};
-  var timezone = - (new Date().getTimezoneOffset()) / 60;
-  data['timezone'] = timezone;
-  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-  // theme select2
-  var features = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa', 'Nesamone'];
-  var features_ex = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa', 'Nesamone'];
-
-  var rDays = 5;
-  if(rDays == 0) $('#rDays_row').css('display', 'none')
-  if(rDays != 0) $('#rAnalysis_row').css('display', 'none')
-
-  function selectRefresh() {
-        $('.themeDropdown').select2({
-            placeholder: "Please select",
-            allowClear: false,
-            minimumResultsForSearch: -1,
-            width: '100%',
-
-        });
-      };
-</script>
 <script>
     // Scroll UP
   window.addEventListener("scroll", () => {
@@ -1705,7 +1681,7 @@
   ];
   var timezone = - (new Date().getTimezoneOffset()) / 60;
   data['timezone'] = timezone;
-  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
+  data['datetime_tz'] = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
   // theme select2
   var features = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
   var features_ex = ['EmoFreq', 'Energy', 'Having Fun', 'Sports', 'Alcohol', 'Yoga', 'Lempa'];
