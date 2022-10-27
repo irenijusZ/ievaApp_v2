@@ -1502,13 +1502,15 @@ button.collapse_btn.collapsed .fa-chevron-down {
 .switch-button
 {
     position: relative;
-    width: 43px;
+    width: 33px;
     overflow: hidden;
+    height: 18px;
+    margin-left: auto;
 }
 
 .switch-button.r, .switch-button.r .layer
 {
-    border-radius: 100px;
+    border-radius: 50px;
 }
 
 
@@ -1542,16 +1544,15 @@ button.collapse_btn.collapsed .fa-chevron-down {
 {
     content: '';
     position: absolute;
-    top: 3px;
+    top: 2.5px;
     left: 3px;
-    width: 20px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     color: #fff;
     font-size: 10px;
     font-weight: bold;
     text-align: center;
     line-height: 1;
-    padding: 9px 0px;
     background-color: white;
     border-radius: 50%;
     transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
@@ -1560,9 +1561,8 @@ button.collapse_btn.collapsed .fa-chevron-down {
 #button-1 .checkbox:checked + .knobs:before
 {
     content: '';
-    left: 20px;
+    left: 17px;
     background-color: white;
-    ;
 }
 
 #button-1 .checkbox:checked ~ .layer
@@ -1632,10 +1632,7 @@ input::-webkit-inner-spin-button {
     height: 2rem; 
 }
 
-.main-page-header{
-    gap: 10px;
-    justify-content: flex-start !important
-}
+
 .main-page-header span{
     font-size: 14px !important;
     font-weight: 500;
@@ -1657,8 +1654,39 @@ input::-webkit-inner-spin-button {
 
 .quantity-field{
     border: 3px solid #f0f0f0;
+    width: 40px;
 }
 
 input:focus-visible{
     outline: 0px !important;
+}
+
+.full_accordion{
+    button.collapse_btn:hover {
+        background-color: unset;
+        transition: all ease .6s;
+    }
+    .accordion-button {
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+    .logo_title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    
+}
+.faqQTitle{
+    font-weight: 400;
+font-size: 12px;
+line-height: 9px;
+color: #172239;
+margin-bottom: 0px;
+}
+
+a.accordion-header{
+    color: #172239;
 }

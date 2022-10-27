@@ -26,9 +26,7 @@
 <body>
   <!-- page header starting -->
   <nav class="navbar navbar-sticky-top Gradient">
-    <a href="./add_tag.html" style="position: absolute; left: 5%; color: white; cursor: pointer">
-      <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-    </a>
+
     <h4>More</h4>
   </nav>
   <!-- page header ending -->
@@ -50,15 +48,17 @@
   <main class="common-body">
     <div class="container">
       <!-- Main Accordion -->
-      <div class="accordion general_accordion" id="accordionRecord">
+      <div class="accordion general_accordion full_accordion" id="accordionRecord">
         <!-- Profile & Settings Record start -->
         <div class="accordion-item">
           <!-- accordion header -->
           <h2 class="accordion-header main-page-header" id="headingOne">
-            <img src="./assets/images/1-profile-icon.svg" />
-            <span>Profile and Settings</span>
             <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#recordOne" aria-expanded="false" aria-controls="recordOne">
+              <div class="logo_title">
+                <img src="./assets/images/1-profile-icon.svg" />
+                <span>Profile and Settings</span>
+              </div>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
           </h2>
@@ -69,51 +69,56 @@
             data-bs-parent="#accordionRecord">
             <div class="accordion-body">
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Name</label>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <input type="text" class="form-control input-text" placeholder="John Smith" />
                 </div>
               </div>
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Email </label>
                 </div>
-                <div class="col-7">
-                  <input type="text" class="form-control input-text" placeholder="Johnsmith@gmail.com" />
+                <div class="col-8">
+                  <input type="email" class="form-control input-text" placeholder="Johnsmith@gmail.com" />
                 </div>
               </div>
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Weight (Kg) </label>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <input type="text" class="form-control input-text" placeholder="79" />
                 </div>
               </div>
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Height (cm) </label>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <input type="text" class="form-control input-text" placeholder="187" />
                 </div>
               </div>
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Gender </label>
                 </div>
-                <div class="col-7">
-                  <input type="text" class="form-control input-text" placeholder="Male" />
+                <div class="col-8">
+                  <select class="form-select form-control form-select-sm" aria-placeholder="Select Reason">
+                    <option selected>Gender</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Other</option>
+                  </select>
                 </div>
               </div>
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Date of Birth
                   </label>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <input type="text" class="form-control input-text" placeholder="20 Dec, 2020" />
                 </div>
               </div>
@@ -128,7 +133,7 @@
                       data-bs-content="Analysis if moon phase has an impact on your well being"></i>
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
                     <div class="knobs"></div>
@@ -147,11 +152,24 @@
                       data-bs-content="Analysis if moon phase has an impact on your well being"></i>
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
                     <div class="knobs"></div>
                     <div class="layer"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row input-fields">
+                <div class="col-4 my-auto">
+                  <label class="commonLabel" for="">Location Permitions
+                  </label>
+                </div>
+                <div class="col-8">
+                  <div>
+                    <button href="" class="btn-settings btn-enabled">
+                      Enabled
+                    </button>
                   </div>
                 </div>
               </div>
@@ -164,7 +182,7 @@
                       data-bs-content="Analysis if moon phase has an impact on your well being"></i>
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
                     <div class="knobs"></div>
@@ -181,7 +199,7 @@
                       data-bs-content="Analysis if moon phase has an impact on your well being"></i>
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
                     <div class="knobs"></div>
@@ -196,37 +214,23 @@
                   </label>
                 </div>
                 <div class="col-5">
-                  <div class="mutleSelect">
-                    <select class="form-select form-control form-select-sm" aria-placeholder="Select Reason">
-                      <option selected>Lituanian</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">One</option>
-                    </select>
-                  </div>
+                  <select class="form-select form-control form-select-sm" aria-placeholder="Select Reason">
+                    <option selected>Lituanian</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">One</option>
+                  </select>
                 </div>
               </div>
 
-              <div class="row input-fields">
-                <div class="col-5 my-auto">
-                  <label class="commonLabel" for="">Location Permitions
-                  </label>
-                </div>
-                <div class="col-7">
-                  <div>
-                    <button href="" class="btn-settings btn-enabled">
-                      Enabled
-                    </button>
-                  </div>
-                </div>
-              </div>
+
 
               <div class="row input-fields">
-                <div class="col-5 my-auto">
+                <div class="col-4 my-auto">
                   <label class="commonLabel" for="">Delete Account
                   </label>
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                   <div>
                     <button href="" class="btn-settings btn-delete">
                       Delete
@@ -249,10 +253,13 @@
         <div class="accordion-item">
           <!-- accordion header -->
           <h2 class="accordion-header main-page-header" id="headingOne">
-            <img src="./assets/images/2-features-icons.svg" />
-            <span>Features</span>
+
             <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#recordTwo" aria-expanded="false" aria-controls="recordTwo">
+              <div class="logo_title">
+                <img src="./assets/images/2-features-icons.svg" />
+                <span>Features</span>
+              </div>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
           </h2>
@@ -262,57 +269,61 @@
           <div id="recordTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
             data-bs-parent="#accordionRecord">
             <div class="accordion-body">
-              <div class="row">
-                <div class="row input-fields">
-                  <div class="my-auto">
-                    <label class="commonLabel" for="">Moon Phase
-                      <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
-                        data-bs-toggle="popover" data-bs-placement="bottom"
-                        data-bs-content="Analysis if moon phase has an impact on your well being"></i>
-                    </label>
+              <div class="row input-fields">
+                <div class="col-10 my-auto">
+                  <label class="commonLabel" for="">Moon Phase
+                    <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
+                      data-bs-toggle="popover" data-bs-placement="bottom"
+                      data-bs-content="Analysis if moon phase has an impact on your well being"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="row input-fields">
+                <div class="col-10 my-auto">
+                  <label class="commonLabel" for="">Weather & Location Permissions
+                    <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
+                      data-bs-toggle="popover" data-bs-placement="bottom"
+                      data-bs-content="Analysis if moon phase has an impact on your well being"></i>
+                  </label>
+                </div>
+              </div>
+              <div class="row input-fields">
+                <div class="col-10 my-auto">
+                  <label class="commonLabel" for="">Motivation Quotes
+                    <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
+                      data-bs-toggle="popover" data-bs-placement="bottom"
+                      data-bs-content="Analysis if moon phase has an impact on your well being"></i>
+                  </label>
+                </div>
+                <div class="col-2 my-auto">
+                  <div class="switch-button r" id="button-1">
+                    <input type="checkbox" class="checkbox" />
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row input-fields">
+                <div class="col-10 my-auto">
+                  <label class="commonLabel" for="">Personal Suggestions
+                    <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
+                      data-bs-toggle="popover" data-bs-placement="bottom"
+                      data-bs-content="Analysis if moon phase has an impact on your well being"></i>
+                  </label>
+                </div>
+                <div class="col-2 my-auto">
+                  <div class="switch-button r" id="button-1">
+                    <input type="checkbox" class="checkbox" />
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
                   </div>
                 </div>
 
-                <div class="row input-fields">
-                  <div class="my-auto">
-                    <label class="commonLabel" for="">Weather & Location Permissions
-                      <i title="text text text" class="fa-solid fa-info-circle" data-bs-trigger="hover"
-                        data-bs-toggle="popover" data-bs-placement="bottom"
-                        data-bs-content="Analysis if moon phase has an impact on your well being"></i>
-                    </label>
-                  </div>
-                </div>
-                <div class="row input-fields">
-                  <div class="col-10 my-auto">
-                    <label class="commonLabel" for="">Motivation Quotes
-                    </label>
-                  </div>
-                  <div class="col-2">
-                    <div class="switch-button r" id="button-1">
-                      <input type="checkbox" class="checkbox" />
-                      <div class="knobs"></div>
-                      <div class="layer"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row input-fields">
-                  <div class="col-10 my-auto">
-                    <label class="commonLabel" for="">Personal Suggestions
-                    </label>
-                  </div>
-                  <div class="col-2">
-                    <div class="switch-button r" id="button-1">
-                      <input type="checkbox" class="checkbox" />
-                      <div class="knobs"></div>
-                      <div class="layer"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div class="borderLine"></div>
-                    <button href="" class="btn_save">SAVE</button>
-                  </div>
+                <div>
+                  <div class="borderLine"></div>
+                  <button href="" class="btn_save">SAVE</button>
                 </div>
               </div>
             </div>
@@ -324,10 +335,13 @@
         <div class="accordion-item">
           <!-- accordion header -->
           <h2 class="accordion-header main-page-header" id="headingOne">
-            <img src="./assets/images/3-contact-icon.svg" />
-            <span>Contact Us</span>
+
             <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#recordThree" aria-expanded="false" aria-controls="recordThree">
+              <div class="logo_title">
+                <img src="./assets/images/3-contact-icon.svg" />
+                <span>Contact Us</span>
+              </div>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
           </h2>
@@ -338,33 +352,30 @@
             data-bs-parent="#accordionRecord">
             <div class="accordion-body">
 
-              <div class="row">
 
                 <div class="row input-fields">
-                  <div class="col-5 my-auto">
+                  <div class="col-4 my-auto">
                     <label class="commonLabel" for="">Reason
                       <!-- <i title="text text text" class="fa-solid fa-info-circle " data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Analysis if moon phase has an impact on your well being"></i> -->
                     </label>
                   </div>
-                  <div class="col-7">
-                    <div class="mutleSelect">
-                      <select class="form-select form-control form-select-sm" aria-placeholder="Select Reason">
-                        <option selected>Select Reason</option>
-                        <option value="1">Three</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
+                  <div class="col-8">
+                    <select class="form-select form-control form-select-sm" aria-placeholder="Select Reason">
+                      <option selected>Select Reason</option>
+                      <option value="1">Three</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
                 </div>
 
                 <div class="row input-fields">
-                  <div class="col-5 my-auto">
+                  <div class="col-4 my-auto">
                     <label class="commonLabel" for="">Message
                       <!-- <i title="text text text" class="fa-solid fa-info-circle " data-bs-trigger="hover" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Analysis if moon phase has an impact on your well being"></i> -->
                     </label>
                   </div>
-                  <div class="col-7">
+                  <div class="col-8">
                     <div class="text-area">
                       <textarea type="text" class="form-control" placeholder="Write a message"
                         style="min-height: 80px"></textarea>
@@ -377,8 +388,6 @@
                   </div>
                 </div>
 
-
-              </div>
             </div>
           </div>
         </div>
@@ -388,10 +397,13 @@
         <div class="accordion-item">
           <!-- accordion header -->
           <h2 class="accordion-header main-page-header" id="headingOne">
-            <img src="./assets/images/4-reminders-icon.svg" />
-            <span>Reminders</span>
+
             <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#recordFour" aria-expanded="false" aria-controls="recordFour">
+              <div class="logo_title">
+                <img src="./assets/images/4-reminders-icon.svg" />
+                <span>Reminders</span>
+              </div>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
           </h2>
@@ -409,7 +421,7 @@
                   <label class="commonLabel" for="">Manual Reminders
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox">
                     <div class="knobs"></div>
@@ -420,14 +432,10 @@
               <div class="borderLine"></div>
               <div class="row input-fields">
                 <div class="col-3 my-auto">
-                  <div>
-                    <input type="text" class="form-control input-disabled input-text" disabled placeholder="7:00" />
-                  </div>
+                    <input type="text" class="form-control text-center input-disabled input-text" disabled placeholder="7:00" />
                 </div>
                 <div class="col-8">
-                  <div>
-                    <input type="text" class="form-control input-text" placeholder="Custom Text" />
-                  </div>
+                    <input type="time" class="form-control" value="10:05 AM" />
                 </div>
                 <div class="col-1 p-0" style="align-self: center">
                   <img src="./assets/images/plus-sign.svg" />
@@ -436,14 +444,10 @@
 
               <div class="row input-fields">
                 <div class="col-3 my-auto">
-                  <div>
-                    <input type="text" class="form-control input-disabled input-text" disabled placeholder="7:00" />
-                  </div>
+                    <input type="text" class="form-control text-center input-disabled input-text" disabled placeholder="7:00" />
                 </div>
                 <div class="col-8">
-                  <div>
-                    <input type="text" class="form-control input-text" placeholder="Custom Text" />
-                  </div>
+                  <input type="time" class="form-control" value="10:05 AM" />
                 </div>
                 <div class="col-1 p-0" style="align-self: center">
                   <img src="./assets/images/delete-sign.svg" />
@@ -456,7 +460,7 @@
                   <label class="commonLabel" for="">Random Reminders
                   </label>
                 </div>
-                <div class="col-2">
+                <div class="col-2 my-auto">
                   <div class="switch-button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
                     <div class="knobs"></div>
@@ -468,16 +472,16 @@
               <div class="border-line"></div>
 
               <div class="row input-fields">
-                <div class="col-7 my-auto">
+                <div class="col-6 my-auto">
                   <label class="commonLabel" for="">Notifications Per Day
                   </label>
                 </div>
-                <div class="col-5">
+                <div class="col-6">
                   <div class="input-group w-auto justify-content-end align-items-center">
                     <input type="button" value="-" class="button-minus border rounded-circle icon-shape icon-sm me-n1"
                       data-field="quantity" style="margin-right: -8px;" onclick="decrement()" />
                     <input id="numberValue" type="number" disabled step="1" max="10" value="1" name="quantity"
-                      class="quantity-field text-center w-25 bg-white" />
+                      class="quantity-field text-center  bg-white" />
                     <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm ms-n1"
                       data-field="quantity" style="margin-left: -8px;" onclick="increment()" />
                   </div>
@@ -501,10 +505,13 @@
         <div class="accordion-item">
           <!-- accordion header -->
           <h2 class="accordion-header main-page-header" id="headingOne">
-            <img src="./assets/images/5-faq-icon.svg" />
-            <span>FAQ</span>
+
             <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#recordFive" aria-expanded="false" aria-controls="recordFive">
+              <div class="logo_title">
+                <img src="./assets/images/5-faq-icon.svg" />
+                <span>FAQ</span>
+              </div>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
           </h2>
@@ -519,13 +526,16 @@
                 <!-- faq1 -->
                 <div class="accordion-item accordion-item__faq">
                   <!-- accordion header -->
-                    <h2 class="accordion-header" id="faqHeadingOne">
-                      Question will be here?
-                      <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
-                        <i class="fa-solid fa-chevron-down"></i>
-                      </button>
-                    </h2>
+                  <h2 class="accordion-header px-0" id="faqHeadingOne">
+
+                    <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
+                      <div class="logo_title">
+                        <p class="faqQTitle"> Question will be here?</p>
+                      </div>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </h2>
                   <!-- accordion body -->
                   <div id="faqOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne"
                     data-bs-parent="#accordionFAQ">
@@ -547,12 +557,14 @@
                 <!-- faq2  -->
                 <div class="accordion-item accordion-item__faq">
                   <!-- accordion header -->
-                    <h2 class="accordion-header" id="faqHeadingTwo">
-                      Question will be here?
-                      <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-                        <i class="fa-solid fa-chevron-down"></i>
-                      </button>
+                  <h2 class="accordion-header px-0" id="faqHeadingTwo">
+                    <button class="accordion-button collapse_btn collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                      <div class="logo_title">
+                        <p class="faqQTitle"> Question will be here?</p>
+                      </div>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
                   </h2>
                   <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
                     data-bs-parent="#accordionFAQ">
@@ -582,10 +594,12 @@
         <!-- Terms And Conditions Record Starts  -->
         <div class="accordion-item">
           <!-- accordion header -->
-          <h2 class="accordion-header main-page-header" id="headingOne">
+          <a href="" class="accordion-header main-page-header" id="headingOne">
+            <div class="logo_title">
             <img src="./assets/images/6-termsandcond-icon.svg" />
             <span>Terms And Conditons</span>
-          </h2>
+            </div>
+          </a>
         </div>
 
         <!-- Terms And Conditions Record Ends -->
@@ -593,10 +607,12 @@
         <!-- Logout Record Starts  -->
         <div class="accordion-item">
           <!-- accordion header -->
-          <h2 class="accordion-header main-page-header" id="headingOne">
+          <a href class="accordion-header main-page-header" id="headingOne">
+            <div class="logo_title">
             <img src="./assets/images/7-logout-icon.svg" />
             <span>Logout</span>
-          </h2>
+            </div>
+          </a>
         </div>
         <!-- Logout Record Ends -->
       </div>
