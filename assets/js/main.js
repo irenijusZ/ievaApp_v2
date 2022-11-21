@@ -35,6 +35,7 @@ $(".slider-body").slick({
 
 //   delete script
 const deleteItem = document.querySelectorAll('.element-menu .dropdown-delete-item')
+const deleteItemmore = document.querySelectorAll('.btn-delete.dropdown-delete-item')
 let del = document.querySelector('.del-icon-pop')
 // handleDelete
 del.addEventListener("click", () => {
@@ -54,6 +55,14 @@ bacDel.addEventListener("click", function popUpBackBtn() {
 let selectForDel = undefined
 
 deleteItem.forEach(e => {
+  e.addEventListener('click', function deleteItemHandelar(e) {
+    document.querySelector('.pop-up-delete').classList.add("show");
+    document.querySelector('.backdrop').classList.add("show");
+    selectForDel = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement
+
+  })
+})
+deleteItemmore.forEach(e => {
   e.addEventListener('click', function deleteItemHandelar(e) {
     document.querySelector('.pop-up-delete').classList.add("show");
     document.querySelector('.backdrop').classList.add("show");

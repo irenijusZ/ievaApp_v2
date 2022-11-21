@@ -1619,4 +1619,8 @@ input:focus-visible {
 a.accordion-header {
   color: #172239;
 }
+
+.common-body__more .accordion-item .accordion-button {
+  padding-right: 9.5px !important;
+}
 /*# sourceMappingURL=style.v2.0.css.map */
