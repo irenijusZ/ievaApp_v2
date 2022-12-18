@@ -1623,4 +1623,15 @@ a.accordion-header {
 .common-body__more .accordion-item .accordion-button {
   padding-right: 9.5px !important;
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+  display: none;
+}
+
+@media (max-width: 575.98px) {
+  .banner {
+    padding: 52px 0 12px 0;
+  }
+}
 /*# sourceMappingURL=style.v2.0.css.map */

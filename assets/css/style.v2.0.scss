@@ -1697,3 +1697,14 @@ a.accordion-header{
         }
     }
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none; display:none;
+}
+
+@media (max-width: 575.98px){
+    .banner {
+        padding: 52px 0 12px 0;
+    }
+    
+}
