@@ -370,33 +370,35 @@
                       </div>
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
-                          <input type="checkbox" class="checkbox">
+                          <input type="checkbox" class="checkbox" name="reminders">
                           <div class="knobs"></div>
                           <div class="layer"></div>
                         </div>
                       </div>
                     </div>
                     <div class="borderLine"></div>
-                    <div class="row input-fields">
-                      <div class="col-3 pe-md-3 pe-0">
-                        <input type="time" class="form-control" value="10:05 AM" />
+                    <div id="remindersRow">
+                      <div class="row input-fields">
+                        <div class="col-3 pe-md-3 pe-0">
+                          <input type="time" class="form-control" value="10:05 AM" />
+                        </div>
+                        <div class="col-8 my-auto">
+                          <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
+                        </div>
+                        <div class="addMoreReminders col-1 p-0" style="align-self: center">
+                          <img src="./assets/images/plus-sign.svg" />
+                        </div>
                       </div>
-                      <div class="col-8 my-auto">
-                        <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
-                      </div>
-                      <div class="col-1 p-0" style="align-self: center">
-                        <img src="./assets/images/plus-sign.svg" />
-                      </div>
-                    </div>
-                    <div class="row input-fields">
-                      <div class="col-3 pe-md-3 pe-0">
-                        <input type="time" class="form-control" value="10:05 AM" />
-                      </div>
-                      <div class="col-8 my-auto">
-                        <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
-                      </div>
-                      <div class="col-1 p-0" style="align-self: center">
-                        <img src="./assets/images/delete-sign.svg" />
+                      <div class="row input-fields">
+                        <div class="col-3 pe-md-3 pe-0">
+                          <input type="time" class="form-control" value="10:05 AM" />
+                        </div>
+                        <div class="col-8 my-auto">
+                          <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
+                        </div>
+                        <div class="col-1 p-0" style="align-self: center" onclick="$(this).parent().remove();">
+                          <img src="./assets/images/delete-sign.svg" />
+                        </div>
                       </div>
                     </div>
                     <div class="borderLine"></div>
@@ -407,7 +409,7 @@
                       </div>
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
-                          <input type="checkbox" class="checkbox" />
+                          <input type="checkbox" class="checkbox"  name="random_reminders" />
                           <div class="knobs"></div>
                           <div class="layer"></div>
                         </div>
@@ -628,9 +630,26 @@
 
       $(document).ready(function() {
 
+        $('.addMoreReminders').click(function() {
+          let node = $(this).parent().clone(true);
+          $(this).html(`<div class="col-1 p-0 deleteReminder" style="align-self: center" onclick="$(this).parent().parent().remove()">
+                          <img src="./assets/images/delete-sign.svg" />
+                        </div>`)
+
+          node.find('input').last().val("")
+          $('#remindersRow').prepend(node)
+        })
+
         function populate(frm, data) {
           $.each(data, function(key, value){
-            $('[name='+key+']', frm).val(value);
+            if(value == "checked"){
+              $('[name='+key+']', frm).attr("checked", true)
+            }
+            else if(value == 'unchecked'){
+              $('[name='+key+']', frm).attr("checked", false)
+            } else if(key){
+              $('[name='+key+']', frm).val(value);
+            }
           });
         }
 
