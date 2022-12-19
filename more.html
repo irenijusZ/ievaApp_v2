@@ -625,6 +625,29 @@
         document.getElementById('numberValue').stepDown();
       }
       
+
+      $(document).ready(function() {
+
+        function populate(frm, data) {
+          $.each(data, function(key, value){
+            $('[name='+key+']', frm).val(value);
+          });
+        }
+
+        var data = {
+          name: 'Rizwan Ali',
+          dob: '05-05-1997',
+          weight: 60,
+          height: 12.8
+        }
+
+        if(localStorage.getItem('data')) {
+          data = JSON.parse(localStorage.getItem('data'))
+        }
+
+        populate('#useraccount-profile-form', data);
+      })
+
       $(window).on('beforeunload', function(){
         // return 'Are you sure you want to leave?';
         submitProfileSetting();
