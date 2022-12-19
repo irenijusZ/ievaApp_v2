@@ -370,7 +370,7 @@
                       </div>
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
-                          <input type="checkbox" class="checkbox" name="reminders">
+                          <input type="checkbox" class="checkbox" name="manual_reminders">
                           <div class="knobs"></div>
                           <div class="layer"></div>
                         </div>
@@ -396,7 +396,7 @@
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
                         </div>
-                        <div class="col-1 p-0" style="align-self: center" onclick="$(this).parent().remove();">
+                        <div class="col-1 p-0 deleteReminders" style="align-self: center">
                           <img src="./assets/images/delete-sign.svg" />
                         </div>
                       </div>
@@ -629,15 +629,39 @@
       
 
       $(document).ready(function() {
-
         $('.addMoreReminders').click(function() {
           let node = $(this).parent().clone(true);
-          $(this).html(`<div class="col-1 p-0 deleteReminder" style="align-self: center" onclick="$(this).parent().parent().remove()">
+          $(this).html(`<div class="col-1 p-0 deleteReminder" style="align-self: center">
                           <img src="./assets/images/delete-sign.svg" />
                         </div>`)
-
+          let date = node.find('input').first().val();
+          let content = node.find('input').last().val();
+          node.find('input').first().val("")
           node.find('input').last().val("")
+
+          if(localStorage.getItem('data')) {
+            let reminders = [];
+            let data = JSON.parse(localStorage.getItem('data'))
+            if(data['reminders']) reminders = data['reminders']
+
+            let obj = {}
+            obj[date] = content
+            reminders.push(obj)
+
+            data['reminders'] = reminders
+            console.log(data)
+            localStorage.setItem('data', JSON.stringify(data))
+          }
+
           $('#remindersRow').prepend(node)
+        })
+
+        $('.deleteReminder').click(function() {
+          $(this).parent().parent().remove()
+        })
+
+        $('.deleteReminders').click(function() {
+          $(this).parent().remove()
         })
 
         function populate(frm, data) {
