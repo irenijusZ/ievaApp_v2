@@ -43,7 +43,6 @@ function submitProfileSetting() {
   })
   formatedData["features"] = featuresData;
   // formatedData["location_permitions"] = 'Enabled' //because it is a button with disabled attribute
-  console.log(formatedData)
 
   $.ajax({
         url:'',
@@ -55,8 +54,8 @@ function submitProfileSetting() {
                 }
       });
 
-
   console.log(formatedData)
+  localStorage.setItem('data', JSON.stringify(formatedData))
 }
 
 function submitReminder() {
