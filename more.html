@@ -666,6 +666,16 @@
 
         function populate(frm, data) {
           $.each(data, function(key, value){
+            if(key == 'features') {
+              $.each(value, function(k, v) {
+               if(v == "checked"){
+                  $('[name='+k+']', frm).attr("checked", true)
+                }
+                else if(v == 'unchecked'){
+                  $('[name='+k+']', frm).attr("checked", false)
+                }
+              })
+            }
             if(value == "checked"){
               $('[name='+key+']', frm).attr("checked", true)
             }

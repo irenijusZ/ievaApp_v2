@@ -30,17 +30,27 @@ function submitProfileSetting() {
   let form = $('#useraccount-profile-form');
   let data = form.serializeArray();
   var uncheckedFeatures = $('input[type=checkbox]:not(:checked)').map(function(){return {"name": this.name, "value": "unchecked"}}).get();
+  // var checked = $('input[type=checkbox]:checked').map(function(){return {"name": this.name, "value": "checked"}}).get();
+  
   $.each(uncheckedFeatures, function(i, f) { data.push(f) })
+  // $.each(checked, function(i, f) { data.push(f) })
   var formatedData = {}
+  var checkboxes = ['manual_reminders', 'random_level', 'random_reminders']
   var features =['moon_phase', 'weather', 'personalised_suggestions', 'motivational_quotes']
   var featuresData = {}
-  $.each(data, function(index, item) {
-    if(features.includes(item["name"])) {
-      featuresData[item["name"]] = item["value"] == 'on' ? 'checked' : 'unchecked'
-    } else {
-      formatedData[item["name"]] = item["value"]
-    }
-  })
+    $.each(data, function(index, item) {
+      if(features.includes(item["name"])) {
+        featuresData[item["name"]] = item["value"] == 'on' ? 'checked' : 'unchecked'
+      } else {
+        formatedData[item["name"]] = item["value"]
+      }
+    })
+
+    $.each(data, function(index, item) {
+      if(checkboxes.includes(item["name"])) {
+        formatedData[item["name"]] = item["value"] == 'on' ? 'checked' : 'unchecked'
+      }
+    })
   formatedData["features"] = featuresData;
   // formatedData["location_permitions"] = 'Enabled' //because it is a button with disabled attribute
 
