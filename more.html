@@ -396,7 +396,7 @@
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
                         </div>
-                        <div class="col-1 p-0 deleteReminders" style="align-self: center">
+                        <div class="col-1 p-0" onclick="$(this).parent().remove()" style="align-self: center">
                           <img src="./assets/images/delete-sign.svg" />
                         </div>
                       </div>
@@ -431,10 +431,10 @@
                             data-field="quantity" style="margin-left: -8px;" onclick="increment()" />
                         </div>
                       </div>
-                      <div>
+                     <!--  <div>
                         <div class="borderLine"></div>
                         <button href="" class="btn_save">SAVE</button>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -631,11 +631,22 @@
       $(document).ready(function() {
         $('.addMoreReminders').click(function() {
           let node = $(this).parent().clone(true);
-          $(this).html(`<div class="col-1 p-0 deleteReminder" style="align-self: center">
-                          <img src="./assets/images/delete-sign.svg" />
-                        </div>`)
           let date = node.find('input').first().val();
           let content = node.find('input').last().val();
+
+          if(date == "") {
+            if($(this).next().is("span")) $(this).next().remove()
+            $(this).after('<span style="color: red" class="commonLabel mt-1">Please fill this before adding new</span>')
+            return
+          }
+
+          if($(this).next().is("span")) $(this).next().remove()
+          node.find("span").remove()
+
+          $(this).html(`<div class="col-1 p-0" style="align-self: center" onclick="$(this).parent().parent().remove()">
+             <img src="./assets/images/delete-sign.svg" />
+            </div>`)
+
           node.find('input').first().val("")
           node.find('input').last().val("")
 
@@ -654,14 +665,6 @@
           }
 
           $('#remindersRow').prepend(node)
-        })
-
-        $('.deleteReminder').click(function() {
-          $(this).parent().parent().remove()
-        })
-
-        $('.deleteReminders').click(function() {
-          $(this).parent().remove()
         })
 
         function populate(frm, data) {
