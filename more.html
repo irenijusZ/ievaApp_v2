@@ -629,6 +629,27 @@
       
 
       $(document).ready(function() {
+        function populateFeatures(value, frm) {
+         $.each(value, function(k, v) {
+           if(v == "checked"){
+              $('[name='+k+']', frm).attr("checked", true)
+            }
+            else if(v == 'unchecked'){
+              $('[name='+k+']', frm).attr("checked", false)
+            }
+          })
+        }
+
+        function populateRemindersData(data) {
+          let remindersRow = $('#remindersRow')
+          let len = data.reminders.length
+          $.each(data.reminders, function(index, item) {
+            $('#remindersRow').children()[len - index].querySelectorAll("input")[0].value = Object.keys(item)[0]
+            $('#remindersRow').children()[len - index].querySelectorAll("input")[1].value = Object.values(item)[0]
+          })
+        }
+
+
         $('.addMoreReminders').click(function() {
           let node = $(this).parent().clone(true);
           let date = node.find('input').first().val();
@@ -649,18 +670,25 @@
 
           node.find('input').first().val("")
           node.find('input').last().val("")
+          let reminders = [];
+          let obj = {};
+          let data = {};
 
           if(localStorage.getItem('data')) {
-            let reminders = [];
-            let data = JSON.parse(localStorage.getItem('data'))
+            data = JSON.parse(localStorage.getItem('data'))
             if(data['reminders']) reminders = data['reminders']
 
-            let obj = {}
             obj[date] = content
             reminders.push(obj)
 
             data['reminders'] = reminders
             console.log(data)
+            localStorage.setItem('data', JSON.stringify(data))
+          } else {
+            obj[date] = content
+            reminders.push(obj)
+
+            data['reminders'] = reminders
             localStorage.setItem('data', JSON.stringify(data))
           }
 
@@ -670,14 +698,7 @@
         function populate(frm, data) {
           $.each(data, function(key, value){
             if(key == 'features') {
-              $.each(value, function(k, v) {
-               if(v == "checked"){
-                  $('[name='+k+']', frm).attr("checked", true)
-                }
-                else if(v == 'unchecked'){
-                  $('[name='+k+']', frm).attr("checked", false)
-                }
-              })
+             populateFeatures(value,frm)
             }
             if(value == "checked"){
               $('[name='+key+']', frm).attr("checked", true)
@@ -688,13 +709,16 @@
               $('[name='+key+']', frm).val(value);
             }
           });
+
+         populateRemindersData(data);
         }
 
         var data = {
           name: 'Rizwan Ali',
           dob: '05-05-1997',
           weight: 60,
-          height: 12.8
+          height: 12.8,
+          reminders: [{"02:00": "Hi, how are you?"}]
         }
 
         if(localStorage.getItem('data')) {

@@ -64,7 +64,11 @@ function submitProfileSetting() {
                 }
       });
 
-  console.log(formatedData)
+   if(localStorage.getItem('data')) {
+    let reminders = JSON.parse(localStorage.getItem('data'))['reminders']
+    formatedData['reminders'] = reminders
+   }
+
   localStorage.setItem('data', JSON.stringify(formatedData))
 }
 
