@@ -372,7 +372,7 @@
                       </div>
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
-                          <input type="checkbox" class="checkbox" name="manual_reminders">
+                          <input type="checkbox" onchange="manualReminderHandler()" class="checkbox" name="manual_reminders">
                           <div class="knobs"></div>
                           <div class="layer"></div>
                         </div>
@@ -400,14 +400,14 @@
                       </div>
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
-                          <input type="checkbox" class="checkbox"  name="random_reminders" />
+                          <input type="checkbox" class="checkbox"  name="random_reminders" onchange="randomReminderHandler()" />
                           <div class="knobs"></div>
                           <div class="layer"></div>
                         </div>
                       </div>
                     </div>
                     <div class="border-line"></div>
-                    <div class="row input-fields">
+                    <div class="row input-fields" id="notification_per_day">
                       <div class="col-6 my-auto">
                         <label class="commonLabel" for="">Notifications Per Day
                         </label>
@@ -669,7 +669,8 @@
 
       function sortReminders() {
         let remindersRow = $('#remindersRow')
-        let reminders = JSON.parse(localStorage.data).reminders.sort(function(x,y) {
+        let re = JSON.parse(localStorage.data).reminders || []
+        let reminders = re.sort(function(x,y) {
           return (Object.keys(x) < Object.keys(y)) ? -1 : (Object.keys(x) > Object.keys(y)) ? 1 : 0;
           })
         $.each(reminders, function(i, item) {
@@ -689,6 +690,20 @@
 
           remindersRow.append(reminder)
         })
+      }
+
+      function randomReminderHandler() {
+        if(event.currentTarget.checked)
+          $('#notification_per_day').css('display', 'flex')
+        else
+          $('#notification_per_day').css('display', 'none')
+      }
+
+      function manualReminderHandler() {
+        if(event.currentTarget.checked)
+          $('#remindersRow').css('display', 'block')
+        else
+          $('#remindersRow').css('display', 'none')
       }
 
 
@@ -808,6 +823,13 @@
           data = JSON.parse(localStorage.getItem('data'))
         }
 
+        if(data['random_reminders'] == 'unchecked') {
+          $('#notification_per_day').css('display', 'none')
+        }
+
+        if(data['manual_reminders'] == 'unchecked') {
+          $('#remindersRow').css('display', 'none')
+        }
         populate('#useraccount-profile-form', data);
       })
 
