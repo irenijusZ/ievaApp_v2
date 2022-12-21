@@ -653,14 +653,16 @@
         obj[date] = content
         let reminders = [];
         let data = {};
+        let index = ''
 
         if(localStorage.data) {
           data = JSON.parse(localStorage.data)
-          reminders = data.reminders.filter(x => {
-            return Object.keys(x)[0] != Object.keys(obj)[0] && Object.values(x)[0] != Object.values(obj)[0]
+          index = data.reminders.findIndex(x => {
+            return Object.keys(x)[0] == Object.keys(obj)[0] && Object.values(x)[0] == Object.values(obj)[0]
           })
         }
-        data["reminders"] = reminders
+        data.reminders.splice(index, 1)
+        data["reminders"] = data.reminders
         localStorage.setItem('data', JSON.stringify(data))
         node.remove();
       }
