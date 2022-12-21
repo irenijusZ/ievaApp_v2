@@ -16,7 +16,7 @@ for(let i =0;i<liItems.length;i++){
 }
 
 function hideToggleAll(){
-  for(let i =0;i<listGroupToggler.children.length;i++){
+  for(let i =0;i<listGroupToggler?.children?.length;i++){
     if (listGroupToggler.children[i].tagName=='DIV') {
       listGroupToggler.children[i].classList.add("show-toggle")
     }

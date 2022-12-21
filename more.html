@@ -382,7 +382,7 @@
                     <div id="remindersRow">
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="text" class="time form-control" value="22:00" placeholder="--:--" />
+                          <input type="text" class="time form-control" placeholder="--:--" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
@@ -393,7 +393,7 @@
                       </div>
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="text" placeholder="--:--" class="time form-control" value="10:05" />
+                          <input type="text" placeholder="--:--" class="time form-control" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
@@ -618,6 +618,7 @@
     <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>  
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/more.js"></script>
+    <script src="./assets/js/jquery.star-rating.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
@@ -649,11 +650,30 @@
       }
       
       function removeReminder() {
+        let node = ''
         if(event.currentTarget.classList.contains("bin")) {
-          event.currentTarget.parentElement.parentElement.remove()
+          node = event.currentTarget.parentElement.parentElement
         }else {
-          event.currentTarget.parentElement.remove()
+          node = event.currentTarget.parentElement
         }
+
+        let date = node.querySelectorAll("input")[0].value
+        let content = node.querySelectorAll("input")[1].value
+
+        let obj = {};
+        obj[date] = content
+        let reminders = [];
+        let data = {};
+
+        if(localStorage.data) {
+          data = JSON.parse(localStorage.data)
+          reminders = data.reminders.filter(x => {
+            return Object.keys(x)[0] != Object.keys(obj)[0] && Object.values(x)[0] != Object.values(obj)[0]
+          })
+        }
+        data["reminders"] = reminders
+        localStorage.setItem('data', JSON.stringify(data))
+        node.remove();
       }
 
       $(document).ready(function() {
