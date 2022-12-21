@@ -76,14 +76,14 @@
                         <input type="text" class="form-control input-text" name="name"  placeholder="John Smith" />
                       </div>
                     </div>
-                   <!--  <div class="row input-fields">
+                   <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
                         <label class="commonLabel" for="">Email </label>
                       </div>
                       <div class="col-9">
                         <input type="email" readonly name="email" class="form-control input-text" placeholder="Johnsmith@gmail.com" readonly value="rizwanali1055@gmail.com" />
                       </div>
-                    </div> -->
+                    </div>
                     <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
                         <label class="commonLabel" for="">Weight (Kg) </label>
@@ -382,7 +382,7 @@
                     <div id="remindersRow">
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="text" class="time form-control" value="22:00" />
+                          <input type="text" class="time form-control" value="22:00" placeholder="--:--" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
@@ -393,12 +393,12 @@
                       </div>
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="text" class="time form-control" value="10:05" />
+                          <input type="text" placeholder="--:--" class="time form-control" value="10:05" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
                         </div>
-                        <div class="col-1 p-0" onclick="$(this).parent().remove()" style="align-self: center">
+                        <div class="col-1 p-0" onclick="removeReminder()" style="align-self: center">
                           <img src="./assets/images/delete-sign.svg" />
                         </div>
                       </div>
@@ -626,14 +626,42 @@
     <script>
       function increment() {
         document.getElementById('numberValue').stepUp();
+        let value = $('#numberValue').val()
+        let data = {}
+        if(localStorage.getItem('data')) {
+          data = JSON.parse(localStorage.getItem('data'))
+        }
+
+        data['notification_per_day'] = value
+        localStorage.setItem('data', JSON.stringify(data))
       }
       
       function decrement() {
         document.getElementById('numberValue').stepDown();
+        let value = $('#numberValue').val()
+        let data = {}
+        if(localStorage.getItem('data')) {
+          data = JSON.parse(localStorage.getItem('data'))
+        }
+
+        data['notification_per_day'] = value
+        localStorage.setItem('data', JSON.stringify(data))
       }
       
+      function removeReminder() {
+        if(event.currentTarget.classList.contains("bin")) {
+          event.currentTarget.parentElement.parentElement.remove()
+        }else {
+          event.currentTarget.parentElement.remove()
+        }
+      }
 
       $(document).ready(function() {
+
+        $('#numberValue').on('change', function(e) {
+          console.log(e.currentTarget.value)
+        })
+
         function populateFeatures(value, frm) {
          $.each(value, function(k, v) {
            if(v == "checked"){
@@ -656,6 +684,7 @@
 
 
         $('.addMoreReminders').click(function() {
+          if(event.currentTarget.childNodes[0].classList?.contains('bin')) return;
           let node = $(this).parent().clone(true);
           let date = node.find('input').first().val();
           let content = node.find('input').last().val();
@@ -663,13 +692,17 @@
           if(date == "") {
             if($(this).next().is("span")) $(this).next().remove()
             $(this).after('<span style="color: red" class="commonLabel mt-1">Please fill this before adding new</span>')
+            $(this).parent().find("input").first().css("border", '1px solid red')
             return
           }
 
           if($(this).next().is("span")) $(this).next().remove()
           node.find("span").remove()
+          node.find('input').first().css('border', '1px solid #efefef')
+          $(this).parent().find("input").first().css("border", '1px solid #efefef')
 
-          $(this).html(`<div class="col-1 p-0" style="align-self: center" onclick="$(this).parent().parent().remove()">
+
+          $(this).html(`<div class="col-1 p-0 bin" style="align-self: center" onclick="removeReminder()">
              <img src="./assets/images/delete-sign.svg" />
             </div>`)
 
