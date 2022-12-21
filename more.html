@@ -86,18 +86,18 @@
                     </div>
                     <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
-                        <label class="commonLabel" for="">Weight (Kg) </label>
+                        <label class="commonLabel" for="">Weight</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" name="weight" class="form-control input-text" placeholder="79" />
+                        <input type="text" name="weight" class="form-control input-text" placeholder="(kg)" />
                       </div>
                     </div>
                     <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
-                        <label class="commonLabel" for="">Height (cm) </label>
+                        <label class="commonLabel" for="">Height</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" name="height" class="form-control input-text" placeholder="187" />
+                        <input type="text" name="height" class="form-control input-text" placeholder="(cm))" />
                       </div>
                     </div>
                     <div class="row input-fields">
@@ -119,11 +119,11 @@
                         </label>
                       </div>
                       <div class="col-9">
-                        <input type="text" name="dob" class="form-control input-text" placeholder="20 Dec, 2020" />
+                        <input type="text" name="dob" class="form-control input-text" placeholder="YYYY-MM-DD" />
                       </div>
                     </div>
                     <div class="borderLine"></div>
-                    <div class="input-bottom"></div>
+<!--                    <div class="input-bottom"></div>-->
                     <div class="row input-fields">
                       <div class="col-7 my-auto pe-md-3 pe-0">
                         <label class="commonLabel" for="">Emotions Page Language
@@ -335,7 +335,7 @@
                     <div class="row input-fields">
                       <div class="col-12">
                         <div class="text-area">
-                          <textarea type="text" class="form-control" placeholder="Write a message"
+                          <textarea type="text" class="form-control" placeholder="Message"
                             style="min-height: 80px"></textarea>
                         </div>
                       </div>
@@ -378,7 +378,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="borderLine"></div>
+<!--                    <div class="borderLine"></div>-->
+<!--                    <div class="input-bottom"></div>-->
                     <div id="remindersRow">
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
@@ -395,9 +396,9 @@
                     <div class="borderLine"></div>
                     <div class="row input-fields">
                       <div class="col-10 my-auto">
-                        <label class="commonLabel" for="">Random Reminders
-                        </label>
+                        <label class="commonLabel" for="">Random Reminders</label>
                       </div>
+
                       <div class="col-2 my-auto">
                         <div class="switch-button r" id="button-1">
                           <input type="checkbox" class="checkbox"  name="random_reminders" onchange="randomReminderHandler()" />
@@ -405,9 +406,11 @@
                           <div class="layer"></div>
                         </div>
                       </div>
+
                     </div>
-                    <div class="border-line"></div>
+
                     <div class="row input-fields" id="notification_per_day">
+                      <div class="border-line"></div>
                       <div class="col-6 my-auto">
                         <label class="commonLabel" for="">Notifications Per Day
                         </label>
