@@ -391,17 +391,6 @@
                           <img src="./assets/images/plus-sign.svg" />
                         </div>
                       </div>
-                      <div class="row input-fields">
-                        <div class="col-3 pe-md-3 pe-0">
-                          <input type="text" placeholder="--:--" class="time form-control" />
-                        </div>
-                        <div class="col-8 my-auto">
-                          <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
-                        </div>
-                        <div class="col-1 p-0" onclick="removeReminder()" style="align-self: center">
-                          <img src="./assets/images/delete-sign.svg" />
-                        </div>
-                      </div>
                     </div>
                     <div class="borderLine"></div>
                     <div class="row input-fields">
@@ -427,7 +416,7 @@
                         <div class="input-group w-auto justify-content-end align-items-center">
                           <input type="button" value="-" class="button-minus border rounded-circle icon-shape icon-sm me-n1"
                             data-field="quantity" style="margin-right: -8px;" onclick="decrement()" />
-                          <input id="numberValue" type="number" disabled step="1" max="9" min="1" value="1" name="quantity"
+                          <input id="numberValue" type="number" disabled step="1" max="9" min="1" value="1" name="notification_per_day"
                             class="quantity-field text-center  bg-white" />
                           <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm ms-n1"
                             data-field="quantity" style="margin-left: -8px;" onclick="increment()" />
@@ -676,7 +665,42 @@
         node.remove();
       }
 
+      function sortReminders() {
+        let remindersRow = $('#remindersRow')
+        let reminders = JSON.parse(localStorage.data).reminders.sort(function(x,y) {
+          return (Object.keys(x) < Object.keys(y)) ? -1 : (Object.keys(x) > Object.keys(y)) ? 1 : 0;
+          })
+        $.each(reminders, function(i, item) {
+          let date = Object.keys(item)[0]
+          let content = Object.values(item)[0]
+          var reminder = `<div class="row input-fields">
+            <div class="col-3 pe-md-3 pe-0">
+              <input type="text" placeholder="--:--" class="time form-control" value="${date}"/>
+            </div>
+            <div class="col-8 my-auto">
+              <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?"  value="${content}"/>
+            </div>
+            <div class="col-1 p-0" onclick="removeReminder()" style="align-self: center">
+              <img src="./assets/images/delete-sign.svg" />
+            </div>
+          </div>`
+
+          remindersRow.append(reminder)
+        })
+      }
+
+
       $(document).ready(function() {
+
+        let defaultReminders = [{"09:00": "Let's remember what is import"},
+              {"21:00": "Time to reflect the day"}
+            ]
+
+        if(!localStorage.data) {
+          localStorage.setItem('data', JSON.stringify({reminders: defaultReminders}))
+        }
+
+        sortReminders();
 
         $('#numberValue').on('change', function(e) {
           console.log(e.currentTarget.value)
@@ -692,16 +716,6 @@
             }
           })
         }
-
-        function populateRemindersData(data) {
-          let remindersRow = $('#remindersRow')
-          let len = data.reminders.length - 1
-          $.each(data.reminders, function(index, item) {
-            $('#remindersRow').children()[len - index].querySelectorAll("input")[0].value = Object.keys(item)[0]
-            $('#remindersRow').children()[len - index].querySelectorAll("input")[1].value = Object.values(item)[0]
-          })
-        }
-
 
         $('.addMoreReminders').click(function() {
           if(event.currentTarget.childNodes[0].classList?.contains('bin')) return;
@@ -744,11 +758,10 @@
             data = JSON.parse(localStorage.getItem('data'))
             if(data['reminders']) reminders = data['reminders']
 
-            obj[date] = content
+            obj[date] = content == "" ? "It's time for self reflection" : content
             reminders.push(obj)
 
             data['reminders'] = reminders
-            console.log(data)
             localStorage.setItem('data', JSON.stringify(data))
           } else {
             obj[date] = content
@@ -776,7 +789,7 @@
             }
           });
 
-         populateRemindersData(data);
+         $('#numberValue').val(data.notification_per_day)
         }
 
         var data = {

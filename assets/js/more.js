@@ -67,6 +67,10 @@ function submitProfileSetting() {
    formatedData['notification_per_day'] = $('#numberValue').val()
    if(localStorage.getItem('data')) {
     let reminders = JSON.parse(localStorage.getItem('data'))['reminders']
+
+    reminders = reminders.sort(function(x,y) {
+      return (Object.keys(x) < Object.keys(y)) ? -1 : (Object.keys(x) > Object.keys(y)) ? 1 : 0;
+    })
     formatedData['reminders'] = reminders
    }
 
