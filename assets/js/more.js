@@ -64,6 +64,7 @@ function submitProfileSetting() {
                 }
       });
 
+   formatedData['notification_per_day'] = $('#numberValue').val()
    if(localStorage.getItem('data')) {
     let reminders = JSON.parse(localStorage.getItem('data'))['reminders']
     formatedData['reminders'] = reminders

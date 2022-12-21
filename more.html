@@ -74,14 +74,14 @@
                         <input type="text" class="form-control input-text" name="name"  placeholder="John Smith" />
                       </div>
                     </div>
-                    <div class="row input-fields">
+                   <!--  <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
                         <label class="commonLabel" for="">Email </label>
                       </div>
                       <div class="col-9">
                         <input type="email" readonly name="email" class="form-control input-text" placeholder="Johnsmith@gmail.com" readonly value="rizwanali1055@gmail.com" />
                       </div>
-                    </div>
+                    </div> -->
                     <div class="row input-fields">
                       <div class="col-3 my-auto pe-md-3 pe-0">
                         <label class="commonLabel" for="">Weight (Kg) </label>
@@ -380,7 +380,7 @@
                     <div id="remindersRow">
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="time" class="form-control" value="10:05 AM" />
+                          <input type="time" class="form-control" value="22:00" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
@@ -391,7 +391,7 @@
                       </div>
                       <div class="row input-fields">
                         <div class="col-3 pe-md-3 pe-0">
-                          <input type="time" class="form-control" value="10:05 AM" />
+                          <input type="time" class="form-control" value="10:05" />
                         </div>
                         <div class="col-8 my-auto">
                           <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?" />
@@ -618,6 +618,7 @@
     <script src="./assets/js/more.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
     <script>
       function increment() {
         document.getElementById('numberValue').stepUp();
@@ -642,7 +643,7 @@
 
         function populateRemindersData(data) {
           let remindersRow = $('#remindersRow')
-          let len = data.reminders.length
+          let len = data.reminders.length - 1
           $.each(data.reminders, function(index, item) {
             $('#remindersRow').children()[len - index].querySelectorAll("input")[0].value = Object.keys(item)[0]
             $('#remindersRow').children()[len - index].querySelectorAll("input")[1].value = Object.values(item)[0]
@@ -718,7 +719,9 @@
           dob: '05-05-1997',
           weight: 60,
           height: 12.8,
-          reminders: [{"02:00": "Hi, how are you?"}]
+          reminders: [{"09:00": "Let's remember what is import"},
+              {"21:00": "Time to reflect the day"}
+            ]
         }
 
         if(localStorage.getItem('data')) {
