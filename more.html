@@ -365,7 +365,7 @@
                 <div id="recordFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                   data-bs-parent="#accordionRecord">
                   <div class="accordion-body">
-                    <div class="row">
+                    <div class="row mb-3">
                       <div class="col-10 my-auto">
                         <label class="commonLabel" for="">Manual Reminders
                         </label>
@@ -382,10 +382,10 @@
 <!--                    <div class="input-bottom"></div>-->
                     <div id="remindersRow">
                       <div class="row input-fields">
-                        <div class="col-3 pe-md-3 pe-0">
+                        <div class="col-2 pe-md-1 pe-0">
                           <input type="text" class="time form-control" placeholder="--:--" />
                         </div>
-                        <div class="col-8 my-auto">
+                        <div class="col-9 my-auto">
                           <input type="text" class="form-control text-left  input-text" placeholder="It's time for self reflection" />
                         </div>
                         <div class="addMoreReminders col-1 p-0" style="align-self: center">
@@ -680,10 +680,10 @@
           let date = Object.keys(item)[0]
           let content = Object.values(item)[0]
           var reminder = `<div class="row input-fields">
-            <div class="col-3 pe-md-3 pe-0">
+            <div class="col-md-2 col-2 pe-md-1 pe-0">
               <input type="text" placeholder="--:--" class="time form-control" value="${date}"/>
             </div>
-            <div class="col-8 my-auto">
+            <div class="col-9 my-auto">
               <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?"  value="${content}"/>
             </div>
             <div class="col-1 p-0" onclick="removeReminder()" style="align-self: center">
