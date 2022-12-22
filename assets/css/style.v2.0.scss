@@ -1653,7 +1653,7 @@ input::-webkit-inner-spin-button {
 
 .quantity-field{
     border: 3px solid #f0f0f0;
-    width: 40px;
+    width: 36px;
 }
 
 input:focus-visible{
@@ -1700,6 +1700,10 @@ a.accordion-header{
 
 input[type="time"]::-webkit-calendar-picker-indicator {
     background: none; display:none;
+}
+
+.ui-timepicker-input{
+    text-align: center;
 }
 
 @media (max-width: 575.98px){
