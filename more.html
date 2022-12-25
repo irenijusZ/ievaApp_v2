@@ -97,7 +97,7 @@
                         <label class="commonLabel" for="">Height</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" name="height" class="form-control input-text" placeholder="(cm))" />
+                        <input type="text" name="height" class="form-control input-text" placeholder="(cm)" />
                       </div>
                     </div>
                     <div class="row input-fields">
@@ -670,6 +670,27 @@
         node.remove();
       }
 
+      function dateChangeHandler() {
+        let index = event.currentTarget.dataset.index
+        let data  = JSON.parse(localStorage.data)
+        let reminder = data.reminders[index]
+        let key = Object.keys(reminder)
+        delete Object.assign(reminder, {[event.currentTarget.value]: reminder[key] })[key];
+        data.reminders[index] = reminder
+        localStorage.setItem("data", JSON.stringify(data))
+      }
+
+      function contentChangeHandler() {
+        let index = event.currentTarget.dataset.index
+        let data  = JSON.parse(localStorage.data)
+        let reminder = data.reminders[index]
+        let key = Object.keys(reminder)
+        reminder[key] = event.currentTarget.value
+        data.reminders[index] = reminder
+
+        localStorage.setItem("data", JSON.stringify(data))
+      }
+
       function sortReminders() {
         let remindersRow = $('#remindersRow')
         let re = JSON.parse(localStorage.data).reminders || []
@@ -681,10 +702,10 @@
           let content = Object.values(item)[0]
           var reminder = `<div class="row input-fields">
             <div class="col-md-2 col-2 pe-md-1 pe-0">
-              <input type="text" placeholder="--:--" class="time form-control" value="${date}"/>
+              <input type="text" placeholder="--:--" onchange="dateChangeHandler()" class="time form-control" value="${date}" data-index=${i} />
             </div>
             <div class="col-9 my-auto">
-              <input type="text" class="form-control text-left  input-text"  placeholder="how do you feel now?"  value="${content}"/>
+              <input type="text" class="form-control text-left  input-text" onkeyup="contentChangeHandler()" placeholder="how do you feel now?"  value="${content}" data-index=${i} />
             </div>
             <div class="col-1 p-0" onclick="removeReminder()" style="align-self: center">
               <img src="./assets/images/delete-sign.svg" />
