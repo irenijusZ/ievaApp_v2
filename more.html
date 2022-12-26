@@ -609,7 +609,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>  
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/more.js"></script>
     <script src="./assets/js/jquery.star-rating.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -869,6 +868,67 @@
          'timeFormat': 'H:i'
         }); 
       });
+
+
+      function submitProfileSetting() {
+        let form = $('#useraccount-profile-form');
+        let data = form.serializeArray();
+        var uncheckedFeatures = $('input[type=checkbox]:not(:checked)').map(function () {
+          return {
+            "name": this.name,
+            "value": "unchecked"
+          }
+        }).get();
+        // var checked = $('input[type=checkbox]:checked').map(function(){return {"name": this.name, "value": "checked"}}).get();
+
+        $.each(uncheckedFeatures, function (i, f) {
+          data.push(f)
+        })
+        // $.each(checked, function(i, f) { data.push(f) })
+        var formatedData = {}
+        var checkboxes = ['manual_reminders', 'random_level', 'random_reminders']
+        var features = ['moon_phase', 'weather', 'personalised_suggestions', 'motivational_quotes']
+        var featuresData = {}
+        $.each(data, function (index, item) {
+          if (features.includes(item["name"])) {
+            featuresData[item["name"]] = item["value"] == 'on' ? 'checked' : 'unchecked'
+          } else {
+            formatedData[item["name"]] = item["value"]
+          }
+        })
+
+        $.each(data, function (index, item) {
+          if (checkboxes.includes(item["name"])) {
+            formatedData[item["name"]] = item["value"] == 'on' ? 'checked' : 'unchecked'
+          }
+        })
+        formatedData["features"] = featuresData;
+        // formatedData["location_permitions"] = 'Enabled' //because it is a button with disabled attribute
+
+        $.ajax({
+          url: '',
+          type: 'GET',
+          data: {
+            'settings_array': JSON.stringify(formatedData)
+          },
+          success: function (response) {
+            window.location = '#';
+            console.log('ok')
+          }
+        });
+
+        formatedData['notification_per_day'] = $('#numberValue').val()
+        if (localStorage.getItem('data')) {
+          let reminders = JSON.parse(localStorage.getItem('data'))['reminders']
+
+          reminders = reminders.sort(function (x, y) {
+            return (Object.keys(x) < Object.keys(y)) ? -1 : (Object.keys(x) > Object.keys(y)) ? 1 : 0;
+          })
+          formatedData['reminders'] = reminders
+        }
+
+        localStorage.setItem('data', JSON.stringify(formatedData))
+      }
     </script>
   </body>
 </html>
