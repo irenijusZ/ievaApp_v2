@@ -905,18 +905,6 @@
         formatedData["features"] = featuresData;
         // formatedData["location_permitions"] = 'Enabled' //because it is a button with disabled attribute
 
-        $.ajax({
-          url: '',
-          type: 'GET',
-          data: {
-            'settings_array': JSON.stringify(formatedData)
-          },
-          success: function (response) {
-            window.location = '#';
-            console.log('ok')
-          }
-        });
-
         formatedData['notification_per_day'] = $('#numberValue').val()
         if (localStorage.getItem('data')) {
           let reminders = JSON.parse(localStorage.getItem('data'))['reminders']
@@ -929,6 +917,23 @@
 
         localStorage.setItem('data', JSON.stringify(formatedData))
         localStorage.setItem('data1', JSON.stringify(formatedData))
+
+        $.ajax({
+          url: '#',
+          type: 'GET',
+          data: {
+            'settings_array': JSON.stringify(formatedData)
+          },
+          success: function (response) {
+            console.log('ok')
+            localStorage.removeItem('data')
+            localStorage.removeItem('data1')
+          },
+          error: function () {
+            localStorage.removeItem('data')
+            localStorage.removeItem('data1')
+          }
+        });
 
       }
     </script>
